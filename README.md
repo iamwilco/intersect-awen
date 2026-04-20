@@ -1,6 +1,8 @@
-# Intersect MCC — Hub page
+# Intersect Community Hubs · 2025 Post-Mortem
 
-A single-page hub for Intersect's **Membership &amp; Community Committee (MCC)**. Consolidates the 2026 budget proposal, the 2025 community-hubs post-mortem, the committee's remit, and the community FAQ into one legible entry point — without moving or duplicating any of the upstream content.
+A single-page summary of the **2025 Community Hubs programme** — the six regional hubs (AWEN, LATAM, Japan, Sri Lanka, WADA, Clay Nation) that ran from May 2024 to June 2025 under Intersect's Membership &amp; Community Committee.
+
+This page consolidates the full post-mortem into a legible entry point with every cost figure disclosed, every milestone accounted for, and every community concern answered directly — while linking back to the full document and primary sources.
 
 Styled to match Intersect's visual language: Cardano blue, IBM Plex, numbered sections, document-quality layout.
 
@@ -8,102 +10,80 @@ Styled to match Intersect's visual language: Cardano blue, IBM Plex, numbered se
 
 ## What's on the page
 
-1. **Announcement bar** — working-draft status for the 2026 budget
-2. **Hero** — MCC mission plus four headline stats (2026 budget, 2025 hubs, events delivered, membership reach)
-3. **Status card** — current MCC state with total budget plus a seven-figure cost grid across WP 01–07
-4. **Paths** — five entry points (2026 proposal, 2025 post-mortem, about MCC, FAQ, join)
-5. **About the MCC** — mission and five core values (inclusivity, empowerment, transparency, collaboration, sustainability)
-6. **2026 budget** — all seven work packages ($300K total) plus the accountability clause
-7. **2025 hubs** — the six regional hubs with contract values, periods, and milestone counts
-8. **Findings** — six ROI/outcome findings from the post-mortem
-9. **Participants** — MCC, hub operators, community, DReps — who does what
-10. **FAQ** — nine community questions across three groups (financial accountability, ROI, governance &amp; process)
-11. **Resources** — twelve deep-link cards to every authoritative source
+1. **Announcement bar** — report status
+2. **Hero** — headline narrative plus four stats (6 hubs, 173 events, 49/49 milestones, 2,395 members)
+3. **Status card** — version plus six-figure cost grid ($176K USD · 264,616 ADA · $128.90 per member · $982 per event · 70% in-region · 15,436 ADA returned)
+4. **§ 01 Paths** — five ways to read the report
+5. **§ 02 Funding** — complete program funding table (Phase 1 · AMM · Phase 2 bridge) across all six hubs with sourced citations
+6. **§ 03 ROI** — cost efficiency by hub, six program-wide stat cards, detailed Japan benchmark with category breakdown
+7. **§ 04 The six hubs** — per-hub cards (region, manager where public, contract, events, members, three highlights each, deep-link to the full hub section)
+8. **§ 05 Caveats** — how to read the numbers (duration, local cost structure, sub-hub structure, snapshot lag, no single winner)
+9. **§ 06 Deliverables** — contract delivery table (6 requirements, all delivered) plus six beyond-scope outcome cards
+10. **§ 07 FAQ** — eight community concerns across three groups (financial accountability, ROI, governance &amp; process)
+11. **§ 08 Resources** — twelve deep-link cards to every source (archived contracts, Japan spreadsheet, Cardanoscan, Dev Updates, KB pages)
 12. **Footer** — matches intersectmbo.org structure
 
-Every external link points to real, existing Intersect, GitHub, or Google Doc pages. Zero content migration required.
+Every external link points to real, existing public records. Zero content migration required.
 
 ---
 
-## Source repo
+## Source content
 
-Content sourced from **[Awen-online/intersect_mcc](https://github.com/Awen-online/intersect_mcc)** — specifically `mcc_budget_2026.html` (v1.4, March 2026) and `hub_report.html` (v1.6, April 2026). This hub page summarizes and links to both; the original documents remain the authoritative sources.
+Derived from **[Awen-online/intersect_mcc](https://github.com/Awen-online/intersect_mcc)** — specifically `hub_report.html` v1.6 (April 2026). The original document remains the authoritative source; this page is a navigable summary with receipts.
 
 ---
 
 ## Design alignment
 
-- **Primary color**: Cardano blue (`#0033AD`) — matches Intersect's ecosystem identity
-- **Accent**: warm `#B85A25` (draft) for working-draft status, green for "live," amber for "upcoming"
-- **Typography**: IBM Plex Sans + IBM Plex Mono + IBM Plex Serif (for numerals only)
-- **Tone**: formal, structured, transparent — mirrors Intersect copy conventions
+- **Primary color**: Cardano blue (`#0033AD`) — ecosystem convention
+- **Accent semantics**: green for *delivered/ok*, blue for *info*, orange for *highest* — used consistently in tables and stat cards
+- **Typography**: IBM Plex Sans + IBM Plex Mono (for numbers) + IBM Plex Serif (caveat numerals only)
+- **Tone**: formal, transparent, specific — no hedging, no PR
 - **Layout**: sharp corners (4px), generous whitespace, grid-based, no decorative ornament
-- **Sections numbered** `§ 01 · Paths` through `§ 08 · Resources` — reinforces the document-quality feel
+- **Sections numbered** `§ 01 · Paths` through `§ 08 · Resources` — reinforces document-quality feel
 
 ---
 
 ## Deployment
 
-### Quick start — GitHub Pages (zero config)
-This repo ships with a GitHub Actions workflow at `.github/workflows/deploy.yml` that publishes `index.html` to GitHub Pages on every push to `main`.
+### GitHub Pages (zero config)
+This repo ships with a GitHub Actions workflow at `.github/workflows/deploy.yml` that publishes `index.html` on every push to `main`.
 
-1. Fork or clone this repo.
-2. In the repo settings → **Pages** → set **Source** to *GitHub Actions*.
-3. Push to `main`. The workflow deploys the site to `https://<user>.github.io/<repo>/`.
+1. Fork or clone.
+2. Repo **Settings → Pages → Source: GitHub Actions**.
+3. Push to `main` — the workflow deploys to `https://<user>.github.io/<repo>/` within about a minute.
 
-No build step, no dependencies.
+No build step, no dependencies, one external request (Google Fonts).
 
-### Alternative — any static host
-This is a single HTML file with one external request (Google Fonts, preconnected). Drop `index.html` on Netlify, Vercel, Cloudflare Pages, or S3 and it works.
-
-### Alternative — port to Next.js
-If you want to integrate into a larger Intersect property, the page decomposes cleanly into components (`<Announcement>`, `<Header>`, `<Hero>`, `<StatusCard>`, `<Paths>`, `<Pillars>`, `<WorkPackages>`, `<HubsTable>`, `<Findings>`, `<Roles>`, `<FAQ>`, `<Resources>`, `<Footer>`). All CSS uses standard custom properties and can slot into any theme system.
+### Any other static host
+Single HTML file. Drop on Netlify, Vercel, Cloudflare Pages, or S3 and it works as-is.
 
 ---
 
 ## Accessibility &amp; performance
 
-- Semantic HTML (`<section>`, `<header>`, `<nav>`, `<footer>`, `<details>` for FAQ)
+- Semantic HTML (`<section>`, `<header>`, `<nav>`, `<footer>`, `<details>` for the FAQ)
 - Responsive down to 320px
-- No JavaScript required for core functionality (FAQ uses native `<details>`)
+- No JavaScript required for core functionality
 - Sticky header for long-scroll navigation
-- Sufficient color contrast throughout (WCAG AA minimum on all text)
+- WCAG AA color contrast on text
 - Single HTML file, one external request, no framework, no build pipeline
-
----
-
-## Maintenance
-
-Copy blocks that change per cycle:
-
-| Block | Update when | Effort |
-|---|---|---|
-| Announcement bar | Draft → submitted → approved | 1 line |
-| Hero stats | Once per cycle | 4 values |
-| Status card (version, dates) | Minor revisions | 1 block |
-| Work packages | Once per cycle | 7 blocks |
-| Hubs table | New hub / contract period | Add row |
-| Findings grid | Once per cycle | 6 blocks |
-| FAQ | As questions accumulate | Append `<details>` |
-| Resources | As new documents publish | Add card |
-
-Most cycle-over-cycle updates are copy edits, no structural changes needed.
 
 ---
 
 ## What this page deliberately does NOT do
 
-- It does not move any upstream content. Every link points to the existing page on github.com, Intersect docs, Google Docs, or members.intersectmbo.org.
-- It does not replace the full 2026 proposal or the post-mortem document — it summarizes and links to both.
-- It does not make funding decisions or vote on behalf of DReps — those happen on-chain through the 2026 Cardano budget process.
+- It is **not a 2026 budget proposal** — that lives separately in `mcc_budget_2026.html` in the source repo.
+- It does not replace the full post-mortem document — it summarizes and links to it.
+- It does not reinterpret or re-score any figure — every number is sourced exactly as published by the underlying records.
 
 ---
 
 ## Credits
 
-Community hub page drafted by Wilco van de Burgwal (W3i Software), using content from Intersect's MCC and the original `Awen-online/intersect_mcc` repository maintained by the Membership &amp; Community Committee.
+Community summary page drafted by Wilco van de Burgwal (W3i Software), using content from `Awen-online/intersect_mcc` maintained by Intersect's Membership &amp; Community Committee.
 
-Design language borrowed from the sibling `intersect-budget` hub proposal: Cardano blue, IBM Plex, numbered sections, document-quality layout.
+Design language shared with the sibling `intersect-budget` hub proposal: Cardano blue, IBM Plex, numbered sections.
 
 Free to use, modify, fork, or discard as the MCC sees fit.
 
@@ -111,4 +91,4 @@ Free to use, modify, fork, or discard as the MCC sees fit.
 
 ## License
 
-Released under MIT. Do what you want with it.
+Released under MIT.

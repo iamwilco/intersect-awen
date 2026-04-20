@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MCC · Membership &amp; Community Committee | Intersect</title>
-<meta name="description" content="The Membership &amp; Community Committee of Intersect. 2026 budget proposal, 2025 community-hubs post-mortem, and a single entry point into everything the MCC does across the Cardano ecosystem.">
+<title>Intersect Community Hubs · 2025 Post-Mortem Report</title>
+<meta name="description" content="The complete 2025 post-mortem of Intersect's Community Hubs programme — six regional hubs, full funding disclosure, ROI analysis, per-hub results, and direct answers to community accountability questions. May 2024 to June 2025.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
@@ -31,15 +31,14 @@
 
     --accent: #E8763A;
     --accent-soft: #FDF1E8;
-    --accent-dark: #B85A25;
     --live: #0F9D58;
     --live-soft: #E6F4EC;
     --upcoming: #D97706;
     --upcoming-soft: #FEF3C7;
     --closed: #6B7280;
     --closed-soft: #F3F4F6;
-    --draft: #B85A25;
-    --draft-soft: #FDF1E8;
+    --warn: #B85A25;
+    --warn-soft: #FDF1E8;
 
     --max-w: 1240px;
     --container-px: 32px;
@@ -102,9 +101,9 @@
   .announcement-dot {
     width: 6px;
     height: 6px;
-    background: #F7C680;
+    background: #7CE0A4;
     border-radius: 50%;
-    box-shadow: 0 0 0 2px rgba(247, 198, 128, 0.3);
+    box-shadow: 0 0 0 2px rgba(124, 224, 164, 0.3);
   }
   .announcement-inner a {
     color: var(--ink-inverse);
@@ -151,16 +150,8 @@
     position: absolute;
     background: #FFFFFF;
   }
-  .logo-mark::before {
-    top: 50%; left: 0; right: 0;
-    height: 2px;
-    transform: translateY(-50%);
-  }
-  .logo-mark::after {
-    left: 50%; top: 0; bottom: 0;
-    width: 2px;
-    transform: translateX(-50%);
-  }
+  .logo-mark::before { top: 50%; left: 0; right: 0; height: 2px; transform: translateY(-50%); }
+  .logo-mark::after  { left: 50%; top: 0; bottom: 0; width: 2px; transform: translateX(-50%); }
   .logo-suffix {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 11px;
@@ -216,10 +207,7 @@
   .breadcrumb strong { color: var(--ink); font-weight: 500; }
 
   /* ============ HERO ============ */
-  .hero {
-    padding: 72px 0 64px;
-    border-bottom: 1px solid var(--line);
-  }
+  .hero { padding: 72px 0 64px; border-bottom: 1px solid var(--line); }
   .hero-eyebrow {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 12px;
@@ -296,7 +284,7 @@
     position: absolute;
     left: 0; top: 0; bottom: 0;
     width: 4px;
-    background: var(--draft);
+    background: var(--live);
   }
 
   .status-header {
@@ -312,7 +300,7 @@
     gap: 10px;
     font-family: 'IBM Plex Mono', monospace;
     font-size: 11px;
-    color: var(--draft);
+    color: var(--live);
     letter-spacing: 0.12em;
     text-transform: uppercase;
     font-weight: 500;
@@ -322,21 +310,8 @@
     position: relative;
     width: 8px;
     height: 8px;
-    background: var(--draft);
+    background: var(--live);
     border-radius: 50%;
-  }
-  .status-dot::after {
-    content: '';
-    position: absolute;
-    inset: -5px;
-    border: 2px solid var(--draft);
-    border-radius: 50%;
-    opacity: 0.4;
-    animation: pulse 2s ease-out infinite;
-  }
-  @keyframes pulse {
-    0% { transform: scale(0.7); opacity: 0.6; }
-    100% { transform: scale(1.6); opacity: 0; }
   }
   .status-title {
     font-family: 'IBM Plex Sans', sans-serif;
@@ -404,7 +379,7 @@
 
   .status-figures {
     display: grid;
-    grid-template-columns: repeat(7, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     border-top: 1px solid var(--line-soft);
     background: var(--bg-alt);
   }
@@ -425,7 +400,7 @@
   }
   .status-fig-val {
     font-family: 'IBM Plex Sans', sans-serif;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 500;
     color: var(--ink);
   }
@@ -446,9 +421,7 @@
     color: var(--ink-inverse);
     border-top: none;
   }
-  .section-dark h2,
-  .section-dark h3,
-  .section-dark h4 { color: var(--ink-inverse); }
+  .section-dark h2, .section-dark h3, .section-dark h4 { color: var(--ink-inverse); }
   .section-dark p { color: rgba(255, 255, 255, 0.7); }
 
   .section-head {
@@ -489,6 +462,19 @@
   }
   .section-dark .section-head h2 { color: var(--ink-inverse); }
   .section-dark .section-head p { color: rgba(255, 255, 255, 0.75); }
+
+  .section-subhead {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--cardano-blue);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin: 48px 0 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--line);
+  }
+  .section-subhead:first-child { margin-top: 0; }
 
   /* ============ PATHS GRID ============ */
   .paths-grid {
@@ -545,9 +531,8 @@
     gap: 5px;
   }
   .path-tag.live { background: var(--live-soft); color: var(--live); }
-  .path-tag.upcoming { background: var(--upcoming-soft); color: var(--upcoming); }
   .path-tag.ref { background: var(--bg-tint); color: var(--ink-muted); }
-  .path-tag.draft { background: var(--draft-soft); color: var(--draft); }
+  .path-tag.warn { background: var(--warn-soft); color: var(--warn); }
   .path-body { flex: 1; }
   .path h3 {
     font-family: 'IBM Plex Sans', sans-serif;
@@ -591,109 +576,20 @@
   .path.feature .path-num { color: rgba(255, 255, 255, 0.7); }
   .path.feature .path-foot { border-top-color: rgba(255, 255, 255, 0.2); color: rgba(255, 255, 255, 0.75); }
   .path.feature .path-arrow { color: var(--ink-inverse); font-size: 32px; }
-  .path.feature .path-tag.draft { background: rgba(255, 255, 255, 0.2); color: #F7C680; }
+  .path.feature .path-tag.live { background: rgba(255, 255, 255, 0.2); color: #9EE7B8; }
   .path.feature .path-body { flex: 1; }
   .path.feature .path-header { margin-bottom: 16px; }
 
-  /* ============ WORK PACKAGES ============ */
-  .wp-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1px;
-    background: var(--line);
-    border: 1px solid var(--line);
-    border-radius: var(--radius-lg);
-    overflow: hidden;
-  }
-  .wp {
-    background: var(--bg);
-    padding: 28px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    min-height: 200px;
-  }
-  .wp.featured {
-    background: var(--cardano-blue-soft);
-    grid-column: span 1;
-  }
-  .wp-head {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    gap: 12px;
-    padding-bottom: 12px;
-    border-bottom: 1px solid var(--line-soft);
-  }
-  .wp.featured .wp-head { border-bottom-color: rgba(0,51,173,0.15); }
-  .wp-num {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 11px;
-    color: var(--ink-muted);
-    letter-spacing: 0.08em;
-    font-weight: 500;
-  }
-  .wp.featured .wp-num { color: var(--cardano-blue); }
-  .wp-amount {
-    font-family: 'IBM Plex Sans', sans-serif;
-    font-size: 20px;
-    font-weight: 500;
-    color: var(--ink);
-    letter-spacing: -0.01em;
-  }
-  .wp.featured .wp-amount { color: var(--cardano-blue); }
-  .wp h4 {
-    font-family: 'IBM Plex Sans', sans-serif;
-    font-size: 17px;
-    font-weight: 500;
-    line-height: 1.3;
-    color: var(--ink);
-    margin-bottom: 4px;
-  }
-  .wp p {
-    font-size: 14px;
-    color: var(--ink-soft);
-    line-height: 1.55;
-  }
-  .wp-total {
-    grid-column: 1 / -1;
-    background: var(--bg-dark);
-    color: var(--ink-inverse);
-    padding: 32px 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    flex-wrap: wrap;
-    gap: 16px;
-  }
-  .wp-total-label {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 12px;
-    color: rgba(255, 255, 255, 0.6);
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-  }
-  .wp-total-val {
-    font-family: 'IBM Plex Sans', sans-serif;
-    font-size: 40px;
-    font-weight: 300;
-    letter-spacing: -0.02em;
-  }
-  .wp-total-note {
-    font-size: 13px;
-    color: rgba(255, 255, 255, 0.7);
-    font-family: 'IBM Plex Mono', monospace;
-  }
-
-  /* ============ HUBS TABLE ============ */
-  .hubs-table {
+  /* ============ DATA TABLES ============ */
+  .data-table {
     background: var(--bg);
     border: 1px solid var(--line);
     border-radius: var(--radius-lg);
     overflow: hidden;
+    margin-bottom: 16px;
   }
-  .hubs-table table { width: 100%; border-collapse: collapse; }
-  .hubs-table th {
+  .data-table table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  .data-table th {
     background: var(--bg-alt);
     font-family: 'IBM Plex Mono', monospace;
     font-size: 11px;
@@ -702,83 +598,316 @@
     text-transform: uppercase;
     font-weight: 500;
     text-align: left;
-    padding: 16px 20px;
+    padding: 16px 18px;
     border-bottom: 1px solid var(--line);
+    white-space: nowrap;
   }
-  .hubs-table th.right, .hubs-table td.right { text-align: right; }
-  .hubs-table td {
-    padding: 18px 20px;
-    font-size: 14px;
+  .data-table th.right, .data-table td.right { text-align: right; }
+  .data-table th.center, .data-table td.center { text-align: center; }
+  .data-table td {
+    padding: 16px 18px;
     color: var(--ink-soft);
     border-bottom: 1px solid var(--line-soft);
   }
-  .hubs-table tbody tr:last-child td { border-bottom: none; }
-  .hubs-table tbody tr:hover { background: var(--bg-alt); }
-  .hubs-table .hub-name {
+  .data-table tbody tr:last-child td { border-bottom: none; }
+  .data-table tbody tr:hover { background: var(--bg-alt); }
+  .data-table .row-head {
     font-weight: 500;
     color: var(--ink);
   }
-  .hubs-table .hub-sub {
+  .data-table .row-sub {
     color: var(--ink-muted);
     font-size: 12px;
-    margin-left: 4px;
   }
-  .hubs-table .num {
+  .data-table .num {
     font-family: 'IBM Plex Mono', monospace;
     font-feature-settings: 'tnum';
     color: var(--ink);
   }
+  .data-table tfoot td {
+    background: var(--bg-alt);
+    font-weight: 500;
+    color: var(--ink);
+    border-top: 2px solid var(--line);
+    border-bottom: none;
+    padding: 14px 18px;
+  }
+  .data-table .ok { color: var(--live); font-weight: 500; }
+  .data-table .warn { color: var(--accent); font-weight: 500; }
 
-  /* ============ CORE VALUES / PILLARS ============ */
-  .pillars-grid {
+  .table-caption {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: var(--ink-muted);
+    line-height: 1.6;
+    margin-top: 12px;
+  }
+
+  /* ============ STAT GRID ============ */
+  .stat-grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     gap: 1px;
-    background: rgba(255, 255, 255, 0.1);
+    background: var(--line);
+    border: 1px solid var(--line);
     border-radius: var(--radius-lg);
     overflow: hidden;
+    margin-bottom: 24px;
   }
-  .pillar {
-    background: var(--bg-dark);
-    padding: 28px 24px;
+  .stat-card {
+    background: var(--bg);
+    padding: 24px;
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 6px;
+    border-left: 3px solid transparent;
   }
-  .pillar-num {
+  .stat-card.ok { border-left-color: var(--live); }
+  .stat-card.info { border-left-color: var(--cardano-blue); }
+  .stat-card.warn { border-left-color: var(--accent); }
+  .stat-val {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 28px;
+    font-weight: 500;
+    color: var(--ink);
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+  }
+  .stat-label {
+    font-size: 13px;
+    color: var(--ink-soft);
+    font-weight: 500;
+  }
+  .stat-sub {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 11px;
-    color: #7FA2E5;
-    letter-spacing: 0.1em;
-  }
-  .pillar-icon {
-    width: 28px;
-    height: 28px;
-    border: 1.5px solid #7FA2E5;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 12px;
-    color: #7FA2E5;
-    font-weight: 500;
-  }
-  .pillar h4 {
-    font-size: 15px;
-    font-weight: 500;
-    line-height: 1.3;
-    color: var(--ink-inverse);
-  }
-  .pillar p {
-    font-size: 12px;
-    color: rgba(255, 255, 255, 0.65);
-    line-height: 1.5;
-    margin-top: 2px;
+    color: var(--ink-muted);
+    line-height: 1.4;
+    margin-top: 4px;
   }
 
-  /* ============ FINDINGS / ROI GRID ============ */
-  .findings-grid {
+  /* ============ JAPAN BENCHMARK ============ */
+  .benchmark {
+    background: var(--cardano-blue-soft);
+    border-radius: var(--radius-lg);
+    padding: 32px;
+    margin-top: 24px;
+  }
+  .benchmark-lead {
+    font-size: 15px;
+    color: var(--ink-soft);
+    margin-bottom: 20px;
+    line-height: 1.55;
+  }
+  .benchmark-lead strong { color: var(--cardano-blue); font-weight: 600; }
+  .benchmark-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  .benchmark-cell {
+    background: var(--bg);
+    padding: 18px 16px;
+    text-align: center;
+    border-radius: var(--radius);
+  }
+  .benchmark-pct {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 28px;
+    font-weight: 500;
+    color: var(--cardano-blue);
+    line-height: 1;
+    letter-spacing: -0.01em;
+  }
+  .benchmark-cat {
+    font-size: 12px;
+    color: var(--ink-muted);
+    margin-top: 6px;
+    font-family: 'IBM Plex Mono', monospace;
+  }
+  .benchmark-foot {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    font-size: 13px;
+    color: var(--ink-soft);
+    font-family: 'IBM Plex Mono', monospace;
+    padding-top: 16px;
+    border-top: 1px solid rgba(0, 51, 173, 0.15);
+  }
+  .benchmark-foot strong { color: var(--cardano-blue); font-weight: 500; }
+
+  /* ============ HUB CARDS ============ */
+  .hubs-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  .hub-card {
+    background: var(--bg);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .hub-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--line-soft);
+    gap: 24px;
+  }
+  .hub-region {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--cardano-blue);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 6px;
+  }
+  .hub-card h3 {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+  .hub-card h3 .hub-op {
+    font-size: 13px;
+    color: var(--ink-muted);
+    font-weight: 400;
+    margin-left: 6px;
+  }
+  .hub-meta {
+    font-size: 12px;
+    color: var(--ink-muted);
+    font-family: 'IBM Plex Mono', monospace;
+    line-height: 1.6;
+  }
+  .hub-amount {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+    text-align: right;
+    white-space: nowrap;
+  }
+  .hub-amount-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    color: var(--ink-muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .hub-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    padding: 14px 0;
+    border-top: 1px dashed var(--line);
+    border-bottom: 1px dashed var(--line);
+  }
+  .hub-stat { display: flex; flex-direction: column; gap: 2px; }
+  .hub-stat-v {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--ink);
+  }
+  .hub-stat-l {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    color: var(--ink-muted);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .hub-body p { font-size: 14px; color: var(--ink-soft); line-height: 1.6; }
+  .hub-highlights {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 12px;
+  }
+  .hub-highlight {
+    font-size: 13px;
+    color: var(--ink-soft);
+    padding-left: 16px;
+    position: relative;
+    line-height: 1.5;
+  }
+  .hub-highlight::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 8px;
+    height: 1px;
+    background: var(--cardano-blue);
+  }
+  .hub-highlight strong { color: var(--ink); font-weight: 500; }
+  .hub-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding-top: 14px;
+    border-top: 1px solid var(--line-soft);
+  }
+  .hub-link {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--ink-muted);
+    text-decoration: none;
+    padding: 4px 8px;
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    transition: all 0.15s ease;
+  }
+  .hub-link:hover { color: var(--cardano-blue); border-color: var(--cardano-blue); }
+
+  /* ============ CAVEATS ============ */
+  .caveats {
+    background: var(--bg);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    padding: 40px;
+  }
+  .caveat {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 24px;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--line-soft);
+    align-items: flex-start;
+  }
+  .caveat:last-child { border-bottom: none; padding-bottom: 0; }
+  .caveat:first-child { padding-top: 0; }
+  .caveat-num {
+    font-family: 'IBM Plex Serif', serif;
+    font-weight: 300;
+    font-size: 40px;
+    color: var(--cardano-blue);
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+  .caveat h4 {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 17px;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+  .caveat p { font-size: 14px; color: var(--ink-soft); line-height: 1.6; }
+
+  /* ============ DELIVERABLES ============ */
+  .deliverables-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1px;
@@ -787,91 +916,33 @@
     border-radius: var(--radius-lg);
     overflow: hidden;
   }
-  .finding {
+  .outcome {
     background: var(--bg);
-    padding: 32px;
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 24px;
-    align-items: flex-start;
-  }
-  .finding-num {
-    font-family: 'IBM Plex Serif', serif;
-    font-weight: 300;
-    font-size: 56px;
-    color: var(--cardano-blue);
-    line-height: 1;
-    letter-spacing: -0.02em;
-  }
-  .finding-body h4 {
-    font-family: 'IBM Plex Sans', sans-serif;
-    font-size: 18px;
-    font-weight: 500;
-    margin-bottom: 8px;
-    color: var(--ink);
-  }
-  .finding-body p { color: var(--ink-soft); font-size: 15px; }
-  .finding-metric {
-    margin-top: 14px;
-    padding-top: 12px;
-    border-top: 1px dashed var(--line);
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 12px;
-    color: var(--ink-muted);
-    letter-spacing: 0.04em;
-  }
-  .finding-metric strong {
-    color: var(--ink);
-    font-weight: 500;
-  }
-
-  /* ============ ROLES ============ */
-  .roles-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 24px;
-  }
-  .role {
     padding: 28px;
-    background: var(--bg);
-    border: 1px solid var(--line);
-    border-radius: var(--radius-lg);
+    border-left: 3px solid transparent;
     display: flex;
     flex-direction: column;
-    gap: 14px;
+    gap: 10px;
   }
-  .role-label {
+  .outcome.ok { border-left-color: var(--live); }
+  .outcome.info { border-left-color: var(--cardano-blue); }
+  .outcome.warn { border-left-color: var(--accent); }
+  .outcome-label {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 10px;
-    color: var(--cardano-blue);
+    color: var(--ink-muted);
     letter-spacing: 0.1em;
     text-transform: uppercase;
     font-weight: 500;
   }
-  .role h3 {
+  .outcome h4 {
     font-family: 'IBM Plex Sans', sans-serif;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 500;
-    letter-spacing: -0.01em;
+    color: var(--ink);
   }
-  .role p { font-size: 14px; color: var(--ink-soft); line-height: 1.55; }
-  .role-list {
-    font-size: 13px;
-    color: var(--ink-soft);
-    list-style: none;
-    margin-top: 4px;
-    padding-top: 14px;
-    border-top: 1px solid var(--line-soft);
-  }
-  .role-list li { padding: 4px 0 4px 16px; position: relative; }
-  .role-list li::before {
-    content: '';
-    position: absolute;
-    left: 0; top: 12px;
-    width: 8px;
-    height: 1px;
-    background: var(--cardano-blue);
-  }
+  .outcome p { font-size: 14px; color: var(--ink-soft); line-height: 1.6; }
+  .outcome p strong { color: var(--ink); font-weight: 500; }
 
   /* ============ FAQ ============ */
   .faq-list { display: flex; flex-direction: column; gap: 0; }
@@ -1038,14 +1109,14 @@
     .paths-grid { grid-template-columns: repeat(2, 1fr); }
     .path.feature { grid-column: 1 / -1; flex-direction: column; align-items: flex-start; }
     .path.feature h3 { font-size: 32px; }
-    .wp-grid { grid-template-columns: repeat(2, 1fr); }
-    .findings-grid { grid-template-columns: 1fr; }
-    .pillars-grid { grid-template-columns: repeat(2, 1fr); }
-    .roles-grid { grid-template-columns: repeat(2, 1fr); }
-    .resources-grid { grid-template-columns: repeat(2, 1fr); }
-    .footer-main { grid-template-columns: 1fr 1fr; gap: 32px; }
+    .stat-grid { grid-template-columns: repeat(3, 1fr); }
     .status-figures { grid-template-columns: repeat(3, 1fr); }
     .status-fig:nth-child(3n) { border-right: none; }
+    .hubs-grid { grid-template-columns: 1fr; }
+    .deliverables-grid { grid-template-columns: 1fr; }
+    .benchmark-grid { grid-template-columns: repeat(2, 1fr); }
+    .resources-grid { grid-template-columns: repeat(2, 1fr); }
+    .footer-main { grid-template-columns: 1fr 1fr; gap: 32px; }
   }
 
   @media (max-width: 720px) {
@@ -1064,18 +1135,18 @@
     .paths-grid { grid-template-columns: 1fr; }
     .path.feature { padding: 28px; }
     .path.feature h3 { font-size: 24px; }
-    .wp-grid { grid-template-columns: 1fr; }
-    .finding { grid-template-columns: 1fr; gap: 12px; padding: 24px; }
-    .finding-num { font-size: 36px; }
-    .pillars-grid { grid-template-columns: 1fr; }
-    .roles-grid { grid-template-columns: 1fr; }
+    .stat-grid { grid-template-columns: 1fr 1fr; }
+    .data-table { overflow-x: auto; }
+    .data-table table { min-width: 640px; }
+    .hub-head { flex-direction: column; }
+    .hub-amount { text-align: left; }
+    .caveats { padding: 24px; }
+    .caveat { grid-template-columns: 1fr; gap: 8px; }
+    .benchmark { padding: 24px; }
+    .benchmark-grid { grid-template-columns: 1fr 1fr; }
     .resources-grid { grid-template-columns: 1fr; }
     .footer-main { grid-template-columns: 1fr; gap: 32px; }
     .announcement-inner { flex-direction: column; gap: 6px; font-size: 12px; }
-    .hubs-table { overflow-x: auto; }
-    .hubs-table table { min-width: 640px; }
-    .wp-total { padding: 24px; }
-    .wp-total-val { font-size: 28px; }
     .logo-suffix { display: none; }
   }
 </style>
@@ -1085,8 +1156,8 @@
 <!-- ANNOUNCEMENT BAR -->
 <div class="announcement-bar">
   <div class="container announcement-inner">
-    <span class="announcement-pill"><span class="announcement-dot"></span> Working draft</span>
-    <span>MCC 2026 budget proposal — $300,000 across seven work packages. <a href="#status">Read the status →</a></span>
+    <span class="announcement-pill"><span class="announcement-dot"></span> Report published</span>
+    <span>2025 Community Hubs — full program post-mortem, public funding disclosure, 49/49 milestones verified. <a href="#funding">Jump to funding →</a></span>
   </div>
 </div>
 
@@ -1096,17 +1167,17 @@
     <a href="https://www.intersectmbo.org/" class="logo">
       <span class="logo-mark"></span>
       Intersect
-      <span class="logo-suffix">MCC</span>
+      <span class="logo-suffix">Hubs · Post-Mortem</span>
     </a>
     <nav>
       <ul>
-        <li><a href="#status">Status</a></li>
-        <li><a href="#about">About MCC</a></li>
-        <li><a href="#budget">Budget</a></li>
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#funding">Funding</a></li>
+        <li><a href="#roi">ROI</a></li>
         <li><a href="#hubs">Hubs</a></li>
+        <li><a href="#deliverables">Deliverables</a></li>
         <li><a href="#faq">FAQ</a></li>
         <li><a href="#resources">Resources</a></li>
-        <li><a href="https://members.intersectmbo.org/registration" class="nav-cta">Join Intersect</a></li>
       </ul>
     </nav>
   </div>
@@ -1118,114 +1189,108 @@
     <div class="breadcrumb">
       <a href="https://www.intersectmbo.org/">Home</a>
       <span class="breadcrumb-sep">/</span>
-      <a href="https://docs.intersectmbo.org/intersect-overview/intersect-committees">Committees</a>
+      <a href="https://docs.intersectmbo.org/intersect-overview/intersect-committees/membership-and-community-committee-mcc">MCC</a>
       <span class="breadcrumb-sep">/</span>
-      <strong>Membership &amp; Community (MCC)</strong>
+      <a href="https://docs.intersectmbo.org/intersect-overview/intersect-committees/membership-and-community-committee-mcc/community-hubs">Community Hubs</a>
+      <span class="breadcrumb-sep">/</span>
+      <strong>2025 Post-Mortem</strong>
     </div>
   </div>
 </div>
 
 <!-- HERO -->
-<section class="hero">
+<section class="hero" id="overview">
   <div class="container">
-    <div class="hero-eyebrow">Membership &amp; Community Committee · Intersect</div>
-    <h1>The MCC connects <strong>Intersect to the real world</strong> — membership, community, regional enablement.</h1>
-    <p class="hero-lede">We support membership growth, regional onboarding, and community-led programs across the Cardano ecosystem — making sure an Intersect membership translates into real-world activity and impact. This page is the single entry point to our 2026 proposal and our 2025 results.</p>
+    <div class="hero-eyebrow">Post-Mortem · May 2024 — June 2025</div>
+    <h1>Six regional hubs. <strong>One complete picture.</strong> The 2025 Community Hubs programme, fully accounted for.</h1>
+    <p class="hero-lede">173 events. 49 of 49 milestones delivered. Every contract value disclosed, every bridge payment on-chain. This is the complete program record — funding, ROI, per-hub delivery, community questions answered with receipts.</p>
 
     <div class="hero-stats">
       <div class="hero-stat">
-        <span class="hero-stat-label">2026 budget</span>
-        <span class="hero-stat-value mono">$300,000</span>
-        <span class="hero-stat-sub">7 work packages · draft</span>
-      </div>
-      <div class="hero-stat">
-        <span class="hero-stat-label">2025 hubs</span>
-        <span class="hero-stat-value mono">6 regional</span>
+        <span class="hero-stat-label">Regional hubs</span>
+        <span class="hero-stat-value mono">6</span>
         <span class="hero-stat-sub">NA · LATAM · Japan · SL · WADA · EU</span>
       </div>
       <div class="hero-stat">
-        <span class="hero-stat-label">2025 delivered</span>
-        <span class="hero-stat-value mono">173 events</span>
-        <span class="hero-stat-sub">49 milestones · 48 MAFs</span>
+        <span class="hero-stat-label">Events delivered</span>
+        <span class="hero-stat-value mono">173</span>
+        <span class="hero-stat-sub">across 14 months, 8 languages</span>
       </div>
       <div class="hero-stat">
-        <span class="hero-stat-label">Membership reach</span>
-        <span class="hero-stat-value">70%</span>
-        <span class="hero-stat-sub">individuals within hub regions</span>
+        <span class="hero-stat-label">Milestones</span>
+        <span class="hero-stat-value mono">49 / 49</span>
+        <span class="hero-stat-sub">100% · 48 DocuSign-verified MAFs</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-label">Members attributed</span>
+        <span class="hero-stat-value mono">2,395</span>
+        <span class="hero-stat-sub">1,268 individual · 1,111 assoc · 16 ent</span>
       </div>
     </div>
   </div>
 </section>
 
 <!-- STATUS CARD -->
-<section class="status-section" id="status">
+<section class="status-section">
   <div class="container">
     <div class="status-card">
       <div class="status-header">
         <div>
           <div class="status-label">
             <span class="status-dot"></span>
-            Current phase · Working draft
+            Report · Complete
           </div>
-          <h2 class="status-title">2026 MCC budget proposal is in review.</h2>
-          <p class="status-sub">Seven work packages covering membership strategy, engagement, education, community hubs, community initiatives, partnerships, and ecosystem events. The proposal is published as a live draft while we gather community input and prepare for submission via the 2026 Cardano budget process.</p>
+          <h2 class="status-title">Post-mortem v1.6 · April 2026.</h2>
+          <p class="status-sub">Sourced from 48 DocuSign-verified Milestone Acceptance Forms, 37 Intersect Development Updates (#13 — #70), archived contract records, 185+ public X posts, 30+ Luma event pages, and 15+ video recordings. Every funding figure has a cited public source.</p>
         </div>
         <div class="status-dates">
-          <span class="status-dates-label">Version</span>
-          <span class="status-dates-row">v1.4 · March 2026</span>
-          <span class="status-dates-row">Post-mortem v1.6</span>
-          <span class="status-dates-row">9 April 2026</span>
+          <span class="status-dates-label">Document</span>
+          <span class="status-dates-row">v1.6 · 9 Apr 2026</span>
+          <span class="status-dates-row">Program: 14 months</span>
+          <span class="status-dates-row">May '24 — Jun '25</span>
         </div>
       </div>
 
       <div class="status-actions">
-        <a href="https://htmlpreview.github.io/?https://raw.githubusercontent.com/Awen-online/intersect_mcc/refs/heads/master/mcc_budget_2026.html" class="btn btn-primary">
-          Read the 2026 proposal
+        <a href="https://htmlpreview.github.io/?https://raw.githubusercontent.com/Awen-online/intersect_mcc/refs/heads/master/hub_report.html" class="btn btn-primary">
+          Read the full report
           <span class="btn-arrow">→</span>
         </a>
-        <a href="https://htmlpreview.github.io/?https://raw.githubusercontent.com/Awen-online/intersect_mcc/refs/heads/master/hub_report.html" class="btn btn-secondary">
-          2025 post-mortem
-        </a>
-        <a href="https://docs.google.com/document/d/1h0w3swMntVyn6TL46vB2Arj5Irkmn_7b2w6bIsQzJeU/edit" class="btn btn-secondary">
-          Budget document (draft)
-        </a>
+        <a href="#funding" class="btn btn-secondary">Funding</a>
+        <a href="#hubs" class="btn btn-secondary">The six hubs</a>
+        <a href="#faq" class="btn btn-secondary">Community FAQ</a>
       </div>
 
       <div class="status-figures">
         <div class="status-fig">
-          <span class="status-fig-label">Total 2026</span>
-          <span class="status-fig-val mono">$300,000</span>
-          <span class="status-fig-sub">USD · subject to approval</span>
+          <span class="status-fig-label">USD contracts</span>
+          <span class="status-fig-val mono">$176,000</span>
+          <span class="status-fig-sub">Phase 1 + AMM</span>
         </div>
         <div class="status-fig">
-          <span class="status-fig-label">Community hubs</span>
-          <span class="status-fig-val mono">$75,000</span>
-          <span class="status-fig-sub">WP 04</span>
+          <span class="status-fig-label">ADA contracts</span>
+          <span class="status-fig-val mono">264,616</span>
+          <span class="status-fig-sub">Phase 1 + AMM + bridge</span>
         </div>
         <div class="status-fig">
-          <span class="status-fig-label">The Grid events</span>
-          <span class="status-fig-val mono">$60,000</span>
-          <span class="status-fig-sub">WP 07</span>
+          <span class="status-fig-label">Cost / member</span>
+          <span class="status-fig-val mono">$128.90</span>
+          <span class="status-fig-sub">$161K ÷ 1,249</span>
         </div>
         <div class="status-fig">
-          <span class="status-fig-label">Initiatives</span>
-          <span class="status-fig-val mono">$60,000</span>
-          <span class="status-fig-sub">WP 05</span>
+          <span class="status-fig-label">Cost / event</span>
+          <span class="status-fig-val mono">$982</span>
+          <span class="status-fig-sub">$161K ÷ 164</span>
         </div>
         <div class="status-fig">
-          <span class="status-fig-label">Partnerships</span>
-          <span class="status-fig-val mono">$50,000</span>
-          <span class="status-fig-sub">WP 06</span>
+          <span class="status-fig-label">Members in regions</span>
+          <span class="status-fig-val mono">70%</span>
+          <span class="status-fig-sub">1,268 of 1,799 individuals</span>
         </div>
         <div class="status-fig">
-          <span class="status-fig-label">Engagement</span>
-          <span class="status-fig-val mono">$30,000</span>
-          <span class="status-fig-sub">WP 02</span>
-        </div>
-        <div class="status-fig">
-          <span class="status-fig-label">Education</span>
-          <span class="status-fig-val mono">$26,000</span>
-          <span class="status-fig-sub">WP 03</span>
+          <span class="status-fig-label">Returned to treasury</span>
+          <span class="status-fig-val mono">15,436 ADA</span>
+          <span class="status-fig-sub">Japan · voluntary</span>
         </div>
       </div>
     </div>
@@ -1238,395 +1303,678 @@
     <div class="section-head">
       <div class="section-number">§ 01 · Paths</div>
       <div>
-        <h2>Five ways to engage with the MCC.</h2>
-        <p>Pick the path that matches why you're here. Every path links to the authoritative document or surface — this page is the index, not the source of truth.</p>
+        <h2>Five ways to read this report.</h2>
+        <p>The full post-mortem is deep. This page is the index — pick the path that matches what you're actually trying to find out.</p>
       </div>
     </div>
 
     <div class="paths-grid">
-      <a href="https://htmlpreview.github.io/?https://raw.githubusercontent.com/Awen-online/intersect_mcc/refs/heads/master/mcc_budget_2026.html" class="path feature">
+      <a href="https://htmlpreview.github.io/?https://raw.githubusercontent.com/Awen-online/intersect_mcc/refs/heads/master/hub_report.html" class="path feature">
         <div class="path-body">
           <div class="path-header">
-            <span class="path-num">Path 01 / 05 · Primary reference</span>
-            <span class="path-tag draft"><span style="width:4px;height:4px;background:currentColor;border-radius:50%;display:inline-block"></span> Working draft</span>
+            <span class="path-num">Path 01 / 05 · Primary document</span>
+            <span class="path-tag live"><span style="width:4px;height:4px;background:currentColor;border-radius:50%;display:inline-block"></span> Report published</span>
           </div>
-          <h3>The 2026 MCC budget proposal.</h3>
-          <p>$300,000 across seven work packages — strategy, engagement, education, hubs, initiatives, partnerships, events. Full breakdown with KPIs, milestones, and funding allocations.</p>
-          <div class="path-foot">mcc_budget_2026.html · version 1.4</div>
+          <h3>The full 2025 Community Hubs post-mortem.</h3>
+          <p>Complete report — every hub, every funding line, every milestone, every event. Includes per-hub event tracking, cost efficiency table, detailed Japan benchmark, and full citations.</p>
+          <div class="path-foot">hub_report.html · version 1.6 · April 2026</div>
         </div>
         <div class="path-arrow">↗</div>
       </a>
 
-      <a href="https://htmlpreview.github.io/?https://raw.githubusercontent.com/Awen-online/intersect_mcc/refs/heads/master/hub_report.html" class="path">
+      <a href="#funding" class="path">
         <div class="path-header">
           <span class="path-num">Path 02 / 05</span>
-          <span class="path-tag ref">Reference</span>
+          <span class="path-tag live">Disclosed</span>
         </div>
         <div class="path-body">
-          <h3>2025 community hubs post-mortem</h3>
-          <p>Full analysis of the six regional hubs — contracts, milestones, ROI, outcomes, and direct answers to community concerns about accountability.</p>
+          <h3>Where the money went</h3>
+          <p>Complete program funding across all three phases — Phase 1 contracts, AMM event contracts, Phase 2 bridge payments. Six hubs, every figure sourced.</p>
         </div>
-        <div class="path-foot">hub_report.html · version 1.6</div>
+        <div class="path-foot">↓ Funding section below</div>
       </a>
 
-      <a href="#about" class="path">
+      <a href="#roi" class="path">
         <div class="path-header">
           <span class="path-num">Path 03 / 05</span>
-          <span class="path-tag ref">Reference</span>
+          <span class="path-tag ref">Analysis</span>
         </div>
         <div class="path-body">
-          <h3>What the MCC actually does</h3>
-          <p>Mission, core values, remit, and how the committee connects members to the Cardano ecosystem. The operational layer behind the budget.</p>
+          <h3>Cost-per-member, cost-per-event, cost-per-milestone</h3>
+          <p>ROI analysis across the five USD-contracted hubs. Program-wide efficiency plus the detailed Japan itemized spend benchmark.</p>
         </div>
-        <div class="path-foot">↓ About the MCC</div>
+        <div class="path-foot">↓ ROI analysis below</div>
+      </a>
+
+      <a href="#hubs" class="path">
+        <div class="path-header">
+          <span class="path-num">Path 04 / 05</span>
+          <span class="path-tag ref">Detail</span>
+        </div>
+        <div class="path-body">
+          <h3>Six hubs, individual results</h3>
+          <p>Per-hub summary — manager, contract, events, flagship activations, membership numbers, and deep-link to the full hub section in the primary document.</p>
+        </div>
+        <div class="path-foot">↓ Hub cards below</div>
       </a>
 
       <a href="#faq" class="path">
         <div class="path-header">
-          <span class="path-num">Path 04 / 05</span>
-          <span class="path-tag live"><span style="width:4px;height:4px;background:currentColor;border-radius:50%;display:inline-block"></span> Answers</span>
+          <span class="path-num">Path 05 / 05</span>
+          <span class="path-tag warn">Honest answers</span>
         </div>
         <div class="path-body">
-          <h3>Community FAQ</h3>
-          <p>Honest answers to legitimate questions about 2025 accountability, ROI, contract visibility, and what changes in 2026.</p>
+          <h3>Community concerns, answered directly</h3>
+          <p>The FAQ you came for. Financial accountability, ROI, governance of the program, and why 2026 will be structurally different.</p>
         </div>
         <div class="path-foot">↓ FAQ below</div>
       </a>
-
-      <a href="https://members.intersectmbo.org/registration" class="path">
-        <div class="path-header">
-          <span class="path-num">Path 05 / 05</span>
-          <span class="path-tag upcoming">Take part</span>
-        </div>
-        <div class="path-body">
-          <h3>Join Intersect &amp; the MCC</h3>
-          <p>Become a member, contribute to working groups, apply to host a hub event, or participate in MCC governance directly.</p>
-        </div>
-        <div class="path-foot">members.intersectmbo.org</div>
-      </a>
     </div>
   </div>
 </section>
 
-<!-- ABOUT -->
-<section class="section" id="about">
+<!-- FUNDING -->
+<section class="section" id="funding">
   <div class="container">
     <div class="section-head">
-      <div class="section-number">§ 02 · About the committee</div>
+      <div class="section-number">§ 02 · Funding</div>
       <div>
-        <h2>Membership &amp; Community Committee.</h2>
-        <p>The MCC is an Intersect-facing committee focused on reviewing and improving the membership offering, and on growing and supporting participation across the Intersect community. We create the pathways — people and organizations join them.</p>
+        <h2>Complete program funding. All phases. Public record.</h2>
+        <p>Every contract value is now publicly disclosed. Phase 1 contracts were funded by CDH and Intersect operational budgets (archived). Phase 2 bridge payments were funded through public treasury withdrawal — on-chain. AMM event contracts were issued separately per region.</p>
       </div>
     </div>
 
-    <div class="pillars-grid" style="background: var(--bg-dark); border-radius: var(--radius-lg); overflow: hidden;">
-      <div class="pillar">
-        <div class="pillar-num">01</div>
-        <div class="pillar-icon">I</div>
-        <h4>Inclusivity</h4>
-        <p>Champion diversity and keep governance tooling open to everyone, not only early insiders.</p>
-      </div>
-      <div class="pillar">
-        <div class="pillar-num">02</div>
-        <div class="pillar-icon">E</div>
-        <h4>Empowerment</h4>
-        <p>Support members to lead impactful initiatives in their regions and domains.</p>
-      </div>
-      <div class="pillar">
-        <div class="pillar-num">03</div>
-        <div class="pillar-icon">T</div>
-        <h4>Transparency</h4>
-        <p>Open dialogue and accessible decision-making, with every contract and KPI published.</p>
-      </div>
-      <div class="pillar">
-        <div class="pillar-num">04</div>
-        <div class="pillar-icon">C</div>
-        <h4>Collaboration</h4>
-        <p>Foster synergy across individuals, teams, and regions — not competition for finite attention.</p>
-      </div>
-      <div class="pillar">
-        <div class="pillar-num">05</div>
-        <div class="pillar-icon">S</div>
-        <h4>Sustainability</h4>
-        <p>Long-term engagement through responsible planning, not a sugar rush of one-off campaigns.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- BUDGET / WORK PACKAGES -->
-<section class="section section-alt" id="budget">
-  <div class="container">
-    <div class="section-head">
-      <div class="section-number">§ 03 · 2026 budget</div>
-      <div>
-        <h2>Seven work packages. $300,000 USD.</h2>
-        <p>Each work package maps to a concrete outcome: KPIs, milestones, and measurable impact. Funding is adaptable based on emerging needs and performance — every request must state which KPI it supports and what outcome it produces.</p>
-      </div>
-    </div>
-
-    <div class="wp-grid">
-      <div class="wp">
-        <div class="wp-head">
-          <span class="wp-num">WP 01</span>
-          <span class="wp-amount mono">$25,000</span>
-        </div>
-        <h4>Membership Strategy &amp; Growth</h4>
-        <p>Strategy development &amp; research ($10K), KPI dashboard &amp; analytics tooling ($10K), membership framework &amp; documentation ($5K).</p>
-      </div>
-      <div class="wp">
-        <div class="wp-head">
-          <span class="wp-num">WP 02</span>
-          <span class="wp-amount mono">$30,000</span>
-        </div>
-        <h4>Member Experience &amp; Engagement</h4>
-        <p>UX improvements for Virtual Hub &amp; onboarding ($10K), engagement campaigns &amp; tooling ($10K), community programs &amp; incentives ($10K).</p>
-      </div>
-      <div class="wp">
-        <div class="wp-head">
-          <span class="wp-num">WP 03</span>
-          <span class="wp-amount mono">$26,000</span>
-        </div>
-        <h4>Member Education &amp; Governance Enablement</h4>
-        <p>Content creation — guides &amp; docs ($8K), workshops &amp; sessions ($10K), tooling &amp; delivery platforms ($8K).</p>
-      </div>
-      <div class="wp featured">
-        <div class="wp-head">
-          <span class="wp-num">WP 04</span>
-          <span class="wp-amount mono">$75,000</span>
-        </div>
-        <h4>Global Community Hubs, Regional Enablement &amp; Localization</h4>
-        <p>Hub activity funding pool ($40K), regional coordination &amp; oversight ($10K), performance tracking ($10K), translation services ($8K), contributor incentives ($5K), regional comms ($2K).</p>
-      </div>
-      <div class="wp">
-        <div class="wp-head">
-          <span class="wp-num">WP 05</span>
-          <span class="wp-amount mono">$60,000</span>
-        </div>
-        <h4>Community Initiative Enablement</h4>
-        <p>Hackathon execution ($35K), marketing &amp; outreach ($10K), mentorship &amp; incubation ($10K), media &amp; amplification ($5K). Includes Cardano India Hackathon as flagship model.</p>
-      </div>
-      <div class="wp">
-        <div class="wp-head">
-          <span class="wp-num">WP 06</span>
-          <span class="wp-amount mono">$50,000</span>
-        </div>
-        <h4>Membership Benefits &amp; Partnerships</h4>
-        <p>Partnership development ($10K), program management ($5K), benefit integration ($5K), Enterprise Member Directory — The Grid ($30K).</p>
-      </div>
-      <div class="wp">
-        <div class="wp-head">
-          <span class="wp-num">WP 07</span>
-          <span class="wp-amount mono">$60,000</span>
-        </div>
-        <h4>The Grid Events &amp; Ecosystem Participation</h4>
-        <p>Travel support fund ($20K), Intersect-led events ($15K), local hub events ($15K), branding, swag &amp; NFTs ($10K).</p>
-      </div>
-      <div class="wp" style="background: transparent; border: 1px dashed var(--line-strong); border-radius: var(--radius-lg); grid-column: span 2;">
-        <div class="wp-head" style="border-bottom: none; padding-bottom: 0;">
-          <span class="wp-num">Accountability clause</span>
-        </div>
-        <p>Every funding request under WP 01–07 must clearly state: <strong>which KPI it supports</strong>, <strong>which milestone it contributes toward</strong>, and the <strong>expected measurable outcome</strong>. No open-ended spending, no retrospective justification.</p>
-      </div>
-      <div class="wp-total">
-        <div>
-          <span class="wp-total-label">Total 2026 MCC budget</span>
-          <div class="wp-total-val mono">USD 300,000</div>
-        </div>
-        <span class="wp-total-note">Subject to Intersect approval via the 2026 Cardano budget process</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 2025 HUBS RESULTS -->
-<section class="section" id="hubs">
-  <div class="container">
-    <div class="section-head">
-      <div class="section-number">§ 04 · 2025 hubs</div>
-      <div>
-        <h2>Six regional hubs. One program. Now fully accounted for.</h2>
-        <p>Community hubs accelerate Cardano adoption through local engagement, education, and ecosystem development. Between May 2024 and June 2025 the program ran in six regions. Every contract value, every milestone, and every on-chain payment is now publicly documented.</p>
-      </div>
-    </div>
-
-    <div class="hubs-table">
+    <div class="data-table">
       <table>
         <thead>
           <tr>
             <th>Hub</th>
-            <th>Region</th>
-            <th>Period</th>
-            <th class="right">Milestones</th>
             <th class="right">Phase 1 contract</th>
+            <th class="right">AMM contract</th>
+            <th class="right">Phase 2 bridge</th>
+            <th>Source</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td><span class="hub-name">North America</span><span class="hub-sub">AWEN</span></td>
-            <td>North America</td>
-            <td class="num">Sep 2024 — Jun 2025</td>
-            <td class="right num">9</td>
-            <td class="right num">$25,000 USD</td>
-          </tr>
-          <tr>
-            <td><span class="hub-name">LATAM</span></td>
-            <td>Latin America</td>
-            <td class="num">May 2024 — Jun 2025</td>
-            <td class="right num">9</td>
+            <td><span class="row-head">LATAM</span></td>
             <td class="right num">$42,000 USD</td>
+            <td class="right num">29,412 ADA</td>
+            <td class="right num">23,438 ADA</td>
+            <td><a href="https://docs.intersectmbo.org/intersect-knowledge-base/archive/cardano-budget-archive/intersect-operational-services/2024-intersect-cdh-and-grant-contracts/2024-cdh-contracts">CDH</a></td>
           </tr>
           <tr>
-            <td><span class="hub-name">Japan</span></td>
-            <td>Asia</td>
-            <td class="num">May 2024 — Jun 2025</td>
-            <td class="right num">10</td>
-            <td class="right num">$28,000 USD</td>
-          </tr>
-          <tr>
-            <td><span class="hub-name">Sri Lanka</span><span class="hub-sub">CoinCeylon</span></td>
-            <td>South Asia</td>
-            <td class="num">May 2024 — Jun 2025</td>
-            <td class="right num">10</td>
+            <td><span class="row-head">Sri Lanka</span><span class="row-sub"> · CoinCeylon</span></td>
             <td class="right num">$36,000 USD</td>
+            <td class="right num">28,571 ADA</td>
+            <td class="right num">18,182 ADA</td>
+            <td><a href="https://docs.intersectmbo.org/intersect-knowledge-base/archive/cardano-budget-archive/intersect-operational-services/2024-intersect-cdh-and-grant-contracts/2024-cdh-contracts">CDH</a></td>
           </tr>
           <tr>
-            <td><span class="hub-name">Africa</span><span class="hub-sub">WADA</span></td>
-            <td>Africa</td>
-            <td class="num">May 2024 — Jun 2025</td>
-            <td class="right num">8</td>
+            <td><span class="row-head">Africa</span><span class="row-sub"> · WADA</span></td>
             <td class="right num">$30,000 USD</td>
+            <td class="right num">$10,000 USD</td>
+            <td class="right num">18,182 ADA</td>
+            <td><a href="https://docs.intersectmbo.org/intersect-knowledge-base/archive/cardano-budget-archive/intersect-operational-services/2024-intersect-cdh-and-grant-contracts/2024-cdh-contracts">CDH</a></td>
           </tr>
           <tr>
-            <td><span class="hub-name">Europe</span><span class="hub-sub">Clay Nation</span></td>
-            <td>Europe</td>
-            <td class="num">Sep 2024 — Jun 2025</td>
-            <td class="right num">3</td>
+            <td><span class="row-head">North America</span><span class="row-sub"> · AWEN</span></td>
+            <td class="right num">$25,000 USD</td>
+            <td class="right num">$5,000 USD</td>
+            <td class="right num">16,216 ADA</td>
+            <td><a href="https://docs.intersectmbo.org/intersect-knowledge-base/archive/cardano-budget-archive/intersect-operational-services/2024-intersect-cdh-and-grant-contracts/2024-intersect-contracts">Intersect</a></td>
+          </tr>
+          <tr>
+            <td><span class="row-head">Japan</span></td>
+            <td class="right num">$28,000 USD</td>
+            <td class="right num">28,571 ADA</td>
+            <td class="right num">12,000 ADA</td>
+            <td><a href="https://docs.intersectmbo.org/intersect-knowledge-base/archive/cardano-budget-archive/intersect-operational-services/2024-intersect-cdh-and-grant-contracts/2024-cdh-contracts">CDH</a></td>
+          </tr>
+          <tr>
+            <td><span class="row-head">Europe</span><span class="row-sub"> · Clay Nation</span></td>
             <td class="right num">75,758 ADA</td>
+            <td class="right num">14,286 ADA</td>
+            <td class="right num">—</td>
+            <td><a href="https://docs.intersectmbo.org/intersect-knowledge-base/archive/cardano-budget-archive/intersect-operational-services/2024-intersect-cdh-and-grant-contracts/2024-intersect-contracts">Intersect</a></td>
           </tr>
         </tbody>
+        <tfoot>
+          <tr>
+            <td>USD total</td>
+            <td class="right num">$161,000</td>
+            <td class="right num">$15,000</td>
+            <td class="right num">—</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>ADA total</td>
+            <td class="right num">75,758</td>
+            <td class="right num">100,840</td>
+            <td class="right num">88,018</td>
+            <td></td>
+          </tr>
+        </tfoot>
       </table>
     </div>
 
-    <p style="margin-top: 16px; font-size: 13px; color: var(--ink-muted); font-family: 'IBM Plex Mono', monospace; line-height: 1.6;">Total USD contracts: $161,000 · Phase 2 bridge payments &amp; AMM event contracts published separately · All 48 Milestone Acceptance Forms DocuSign-verified before payment release</p>
+    <p class="table-caption"><strong>Combined totals:</strong> $176,000 USD fiat · 264,616 ADA on-chain across all phases. Sources: <a href="https://docs.intersectmbo.org/intersect-knowledge-base/archive/cardano-budget-archive/intersect-operational-services/2024-intersect-cdh-and-grant-contracts/2024-cdh-contracts">2024 CDH Contracts</a> · <a href="https://docs.intersectmbo.org/intersect-knowledge-base/archive/cardano-budget-archive/intersect-operational-services/2024-intersect-cdh-and-grant-contracts/2024-intersect-contracts">2024 Intersect Contracts</a> · <a href="https://docs.intersectmbo.org/intersect-knowledge-base/archive/cardano-budget-archive/intersect-operational-services/2025-delivery-assurance-contract-updates/membership-and-community-committee-contracts">2025 MCC Bridge Contracts</a>.</p>
   </div>
 </section>
 
-<!-- FINDINGS / ROI -->
-<section class="section section-alt" id="findings">
+<!-- ROI -->
+<section class="section section-alt" id="roi">
   <div class="container">
     <div class="section-head">
-      <div class="section-number">§ 05 · Findings</div>
+      <div class="section-number">§ 03 · Return on investment</div>
       <div>
-        <h2>What the 2025 program actually delivered.</h2>
-        <p>Not every hub performed identically — and that's part of the value. Structural differences, scope, and launch date all affected outcomes. Here are the headline findings from the post-mortem.</p>
+        <h2>Cost efficiency, hub by hub.</h2>
+        <p>ROI figures below use only USD-denominated Phase 1 contracts ($161,000 across five hubs) to avoid exchange-rate assumptions. Europe's contract (75,758 ADA) and all ADA-denominated AMM and bridge payments are excluded from per-member calculations. See <a href="#caveats" style="color:var(--cardano-blue)">§ 05 — Caveats</a> before drawing conclusions from any single number.</p>
       </div>
     </div>
 
-    <div class="findings-grid">
-      <div class="finding">
-        <div class="finding-num serif">01</div>
-        <div class="finding-body">
-          <h4>Most efficient · Japan</h4>
-          <p>61 events, 533 individual members, $19,049 actual spend. Japan returned 15,436 ADA of unused funds to the treasury and published itemized cost breakdowns by category.</p>
-          <div class="finding-metric">Cost per member · <strong>$35.74</strong></div>
+    <div class="section-subhead">Cost efficiency by hub · Phase 1 USD contracts only</div>
+
+    <div class="data-table">
+      <table>
+        <thead>
+          <tr>
+            <th>Hub</th>
+            <th class="right">Phase 1 (USD)</th>
+            <th class="center">Individuals</th>
+            <th class="right">Cost / member</th>
+            <th class="center">Events</th>
+            <th class="right">Cost / event</th>
+            <th class="center">Milestones</th>
+            <th class="right">Cost / milestone</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="row-head">Japan</span></td>
+            <td class="right num">$28,000</td>
+            <td class="center num">533</td>
+            <td class="right num ok">$52.53</td>
+            <td class="center num">61</td>
+            <td class="right num ok">$459</td>
+            <td class="center num">10</td>
+            <td class="right num">$2,800</td>
+          </tr>
+          <tr>
+            <td><span class="row-head">North America</span></td>
+            <td class="right num">$25,000</td>
+            <td class="center num">239</td>
+            <td class="right num ok">$104.60</td>
+            <td class="center num">18</td>
+            <td class="right num">$1,389</td>
+            <td class="center num">9</td>
+            <td class="right num ok">$2,778</td>
+          </tr>
+          <tr>
+            <td><span class="row-head">Sri Lanka</span></td>
+            <td class="right num">$36,000</td>
+            <td class="center num">263</td>
+            <td class="right num">$136.88</td>
+            <td class="center num">21</td>
+            <td class="right num">$1,714</td>
+            <td class="center num">10</td>
+            <td class="right num">$3,600</td>
+          </tr>
+          <tr>
+            <td><span class="row-head">LATAM</span></td>
+            <td class="right num">$42,000</td>
+            <td class="center num">127</td>
+            <td class="right num warn">$330.71</td>
+            <td class="center num">18</td>
+            <td class="right num warn">$2,333</td>
+            <td class="center num">9</td>
+            <td class="right num warn">$4,667</td>
+          </tr>
+          <tr>
+            <td><span class="row-head">Africa (WADA)</span></td>
+            <td class="right num">$30,000</td>
+            <td class="center num">87</td>
+            <td class="right num warn">$344.83</td>
+            <td class="center num">46</td>
+            <td class="right num ok">$652</td>
+            <td class="center num">8</td>
+            <td class="right num">$3,750</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td>Total · USD hubs</td>
+            <td class="right num">$161,000</td>
+            <td class="center num">1,249</td>
+            <td class="right num">$128.90</td>
+            <td class="center num">164</td>
+            <td class="right num">$982</td>
+            <td class="center num">46</td>
+            <td class="right num">$3,500</td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+
+    <p class="table-caption"><strong>How to read:</strong> green = leads on that metric · orange = highest. No single hub leads across every metric — each region has a different efficiency profile. Europe excluded (ADA-only contract). Cost-per-member uses <em>contracted</em> amounts; Japan's self-reported <em>actual spend</em> is lower ($35.74/member) — see benchmark below.</p>
+
+    <div class="section-subhead">Program-wide efficiency</div>
+
+    <div class="stat-grid">
+      <div class="stat-card ok">
+        <span class="stat-val mono">$128.90</span>
+        <span class="stat-label">Cost per individual member</span>
+        <span class="stat-sub">$161K ÷ 1,249</span>
+      </div>
+      <div class="stat-card info">
+        <span class="stat-val mono">$982</span>
+        <span class="stat-label">Cost per event</span>
+        <span class="stat-sub">$161K ÷ 164</span>
+      </div>
+      <div class="stat-card info">
+        <span class="stat-val mono">$4.58</span>
+        <span class="stat-label">Cost per attendee</span>
+        <span class="stat-sub">$125K ÷ 27,279 adjusted</span>
+      </div>
+      <div class="stat-card warn">
+        <span class="stat-val mono">$3,500</span>
+        <span class="stat-label">Cost per milestone</span>
+        <span class="stat-sub">$161K ÷ 46</span>
+      </div>
+      <div class="stat-card info">
+        <span class="stat-val mono">70%</span>
+        <span class="stat-label">Members in hub regions</span>
+        <span class="stat-sub">1,268 of ~1,799</span>
+      </div>
+      <div class="stat-card ok">
+        <span class="stat-val mono">100%</span>
+        <span class="stat-label">Milestones completed</span>
+        <span class="stat-sub">49 / 49 · zero failures</span>
+      </div>
+    </div>
+
+    <div class="section-subhead">Detailed cost benchmark · Japan Hub</div>
+
+    <div class="benchmark">
+      <p class="benchmark-lead">Japan is the only hub with a full itemized spend breakdown. It serves as the reference for what a community hub operation actually costs. <strong>$19,049 actual spend on a $28,000 contract — 15,436 ADA returned to treasury.</strong></p>
+
+      <div class="benchmark-grid">
+        <div class="benchmark-cell">
+          <div class="benchmark-pct">54.9%</div>
+          <div class="benchmark-cat">Events · $10,452</div>
+        </div>
+        <div class="benchmark-cell">
+          <div class="benchmark-pct">25.7%</div>
+          <div class="benchmark-cat">Staff labour · $4,900</div>
+        </div>
+        <div class="benchmark-cell">
+          <div class="benchmark-pct">18.3%</div>
+          <div class="benchmark-cat">Hub manager · $3,493</div>
+        </div>
+        <div class="benchmark-cell">
+          <div class="benchmark-pct">1.1%</div>
+          <div class="benchmark-cat">Tools · $203</div>
         </div>
       </div>
-      <div class="finding">
-        <div class="finding-num serif">02</div>
-        <div class="finding-body">
-          <h4>Highest impact · North America</h4>
-          <p>239 individual members plus 6 enterprise members from a $25K contract in 9 months. Strong governance engagement and enterprise partner pipeline.</p>
-          <div class="finding-metric">Cost per member · <strong>$104.60</strong></div>
+
+      <div class="benchmark-foot">
+        <span><strong>Total spend:</strong> $19,049 USD (¥2,857,325)</span>
+        <span><strong>Contract:</strong> $28,000 USD</span>
+        <span><strong>Returned:</strong> 15,436 ADA</span>
+        <span><strong>Per member:</strong> $35.74 (actual)</span>
+      </div>
+      <p class="table-caption" style="margin-top: 14px;">Source: <a href="https://docs.google.com/spreadsheets/d/1muVvwKtyk6WZHOKFpXRorlfGUdqiXAl70P88ttcK_ns/edit">Japan Hub Council Expenditure Spreadsheet</a> (public). Returned funds on-chain: <a href="https://cardanoscan.io/address/0111e909a2fb7ed1b970f7e4ca388350b07ec1151a2a01234f622c584edb506c52dad37a14f71a1d7309f2e9e24f594eb880ec13a9f670fa11">Cardanoscan</a>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- THE HUBS -->
+<section class="section" id="hubs">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-number">§ 04 · The six hubs</div>
+      <div>
+        <h2>Six regions. Six different shapes of impact.</h2>
+        <p>Each hub ran under the same contract framework — monthly Town Hall, social media activity, events, X Space, Status Report, events tracker — but the regional context produced very different outcomes. A summary per hub; follow the link for the full section in the primary report.</p>
+      </div>
+    </div>
+
+    <div class="hubs-grid">
+
+      <!-- Japan -->
+      <div class="hub-card">
+        <div class="hub-head">
+          <div>
+            <div class="hub-region">Asia · Most efficient</div>
+            <h3>Japan <span class="hub-op">· Cardano Japan</span></h3>
+            <div class="hub-meta">May 2024 — Jun 2025 · 14 months · 10 milestones</div>
+          </div>
+          <div>
+            <div class="hub-amount-label">Contract</div>
+            <div class="hub-amount mono">$28,000</div>
+          </div>
+        </div>
+        <div class="hub-stats">
+          <div class="hub-stat"><span class="hub-stat-v mono">61</span><span class="hub-stat-l">Events</span></div>
+          <div class="hub-stat"><span class="hub-stat-v mono">533</span><span class="hub-stat-l">Individual members</span></div>
+          <div class="hub-stat"><span class="hub-stat-v mono">$35.74</span><span class="hub-stat-l">Per member · actual</span></div>
+        </div>
+        <div class="hub-body">
+          <div class="hub-highlights">
+            <div class="hub-highlight"><strong>30% of all Intersect individual members</strong> came from Japan (533 of ~1,799).</div>
+            <div class="hub-highlight">Weekly X Spaces across six cities. Bi-monthly Town Halls. Full Constitution translation.</div>
+            <div class="hub-highlight"><strong>Returned 15,436 ADA</strong> in unused funds to the treasury — voluntary itemized reporting.</div>
+          </div>
+        </div>
+        <div class="hub-links">
+          <a class="hub-link" href="https://htmlpreview.github.io/?https://raw.githubusercontent.com/Awen-online/intersect_mcc/refs/heads/master/hub_report.html#japan-hub">Full section →</a>
+          <a class="hub-link" href="https://docs.google.com/spreadsheets/d/1muVvwKtyk6WZHOKFpXRorlfGUdqiXAl70P88ttcK_ns/edit">Expenditure sheet</a>
         </div>
       </div>
-      <div class="finding">
-        <div class="finding-num serif">03</div>
-        <div class="finding-body">
-          <h4>Highest volume · Africa (WADA)</h4>
-          <p>8 milestones across the largest regional footprint of any hub, including multi-country activations and a sustained localization program.</p>
-          <div class="finding-metric">Program · <strong>$30,000 USD contract</strong></div>
+
+      <!-- North America -->
+      <div class="hub-card">
+        <div class="hub-head">
+          <div>
+            <div class="hub-region">North America · Highest impact</div>
+            <h3>North America <span class="hub-op">· AWEN</span></h3>
+            <div class="hub-meta">Sep 2024 — Jun 2025 · 9.4 months · 9 milestones · Manager: Ian McCullough</div>
+          </div>
+          <div>
+            <div class="hub-amount-label">Contract</div>
+            <div class="hub-amount mono">$25,000</div>
+          </div>
+        </div>
+        <div class="hub-stats">
+          <div class="hub-stat"><span class="hub-stat-v mono">18</span><span class="hub-stat-l">Events</span></div>
+          <div class="hub-stat"><span class="hub-stat-v mono">239</span><span class="hub-stat-l">Individual members</span></div>
+          <div class="hub-stat"><span class="hub-stat-v mono">6</span><span class="hub-stat-l">Enterprise · 38% of total</span></div>
+        </div>
+        <div class="hub-body">
+          <div class="hub-highlights">
+            <div class="hub-highlight"><strong>First DRep Debate of 2025</strong> (GM2025 Fort Myers) — 3,000+ livestream viewers.</div>
+            <div class="hub-highlight"><strong>Consensus Toronto</strong> — 501 registered, 143 attended · official Cardano side event.</div>
+            <div class="hub-highlight">Budget Workshops fed 12+ community proposals into GovTool. Shortest contract, highest enterprise conversion.</div>
+          </div>
+        </div>
+        <div class="hub-links">
+          <a class="hub-link" href="https://htmlpreview.github.io/?https://raw.githubusercontent.com/Awen-online/intersect_mcc/refs/heads/master/hub_report.html#awen-hub">Full section →</a>
+          <a class="hub-link" href="https://x.com/IntersectNA">@IntersectNA</a>
+          <a class="hub-link" href="https://lu.ma/cc96lvq8">GM2025 DRep Debate</a>
         </div>
       </div>
-      <div class="finding">
-        <div class="finding-num serif">04</div>
-        <div class="finding-body">
-          <h4>Education leader · Sri Lanka</h4>
-          <p>10 milestones heavy on university programming, developer onboarding, and structured governance education across the region.</p>
-          <div class="finding-metric">Program · <strong>$36,000 USD contract</strong></div>
+
+      <!-- Sri Lanka -->
+      <div class="hub-card">
+        <div class="hub-head">
+          <div>
+            <div class="hub-region">South Asia · Education leader</div>
+            <h3>Sri Lanka <span class="hub-op">· CoinCeylon</span></h3>
+            <div class="hub-meta">May 2024 — Jun 2025 · 13 months · 10 milestones · Manager: Kavinda Kariyapperuma</div>
+          </div>
+          <div>
+            <div class="hub-amount-label">Contract</div>
+            <div class="hub-amount mono">$36,000</div>
+          </div>
+        </div>
+        <div class="hub-stats">
+          <div class="hub-stat"><span class="hub-stat-v mono">21</span><span class="hub-stat-l">Events</span></div>
+          <div class="hub-stat"><span class="hub-stat-v mono">263</span><span class="hub-stat-l">Individual members</span></div>
+          <div class="hub-stat"><span class="hub-stat-v mono">700+</span><span class="hub-stat-l">Students trained</span></div>
+        </div>
+        <div class="hub-body">
+          <div class="hub-highlights">
+            <div class="hub-highlight"><strong>UniHack 2025</strong> — 225 students, 61 teams, 18 universities.</div>
+            <div class="hub-highlight">Trilingual content: Sinhala, Tamil, English. University of Kelaniya (108 certified), Uni Ruhuna (168 students).</div>
+            <div class="hub-highlight">Highest-level government engagement of any hub — met with the President of Sri Lanka.</div>
+          </div>
+        </div>
+        <div class="hub-links">
+          <a class="hub-link" href="https://htmlpreview.github.io/?https://raw.githubusercontent.com/Awen-online/intersect_mcc/refs/heads/master/hub_report.html#srilanka-hub">Full section →</a>
         </div>
       </div>
-      <div class="finding">
-        <div class="finding-num serif">05</div>
-        <div class="finding-body">
-          <h4>Program-wide averages</h4>
-          <p>Across the five USD-contracted hubs: $161K produced 1,249 individual members and 164 events. Average cost per event was roughly $982. Monthly cost per hub averaged around $2,640 — less than a single part-time contractor in most markets.</p>
-          <div class="finding-metric">Members produced · <strong>1,268 individual · 1,111 associate · 16 enterprise</strong></div>
+
+      <!-- LATAM -->
+      <div class="hub-card">
+        <div class="hub-head">
+          <div>
+            <div class="hub-region">Latin America · Sub-hub scale</div>
+            <h3>LATAM</h3>
+            <div class="hub-meta">May 2024 — Jun 2025 · 13 months · 9 milestones</div>
+          </div>
+          <div>
+            <div class="hub-amount-label">Contract</div>
+            <div class="hub-amount mono">$42,000</div>
+          </div>
+        </div>
+        <div class="hub-stats">
+          <div class="hub-stat"><span class="hub-stat-v mono">18</span><span class="hub-stat-l">Events</span></div>
+          <div class="hub-stat"><span class="hub-stat-v mono">127</span><span class="hub-stat-l">Individual members</span></div>
+          <div class="hub-stat"><span class="hub-stat-v mono">5</span><span class="hub-stat-l">Sub-hubs</span></div>
+        </div>
+        <div class="hub-body">
+          <div class="hub-highlights">
+            <div class="hub-highlight">Bilingual (Spanish + Portuguese) Town Halls · 500+ ADN audience · 112 Rio registrations.</div>
+            <div class="hub-highlight"><strong>Five sub-hubs</strong> across Argentina, Brazil, Uruguay, Mexico, and others — the widest regional footprint funded from a single contract.</div>
+            <div class="hub-highlight">206 peak X Space attendance. Highest cost-per-member of the USD hubs — reflects sub-hub launch cost.</div>
+          </div>
+        </div>
+        <div class="hub-links">
+          <a class="hub-link" href="https://htmlpreview.github.io/?https://raw.githubusercontent.com/Awen-online/intersect_mcc/refs/heads/master/hub_report.html#latam-hub">Full section →</a>
         </div>
       </div>
-      <div class="finding">
-        <div class="finding-num serif">06</div>
-        <div class="finding-body">
-          <h4>Membership concentration</h4>
-          <p>70% of Intersect's individual members are located in hub regions. These are not passive attendees — they made an active commitment to join and participate in governance.</p>
-          <div class="finding-metric">Individual members in hub regions · <strong>1,799 as of March 2025</strong></div>
+
+      <!-- WADA -->
+      <div class="hub-card">
+        <div class="hub-head">
+          <div>
+            <div class="hub-region">Africa · Highest volume</div>
+            <h3>Africa <span class="hub-op">· WADA</span></h3>
+            <div class="hub-meta">May 2024 — Jun 2025 · 12 months · 8 milestones</div>
+          </div>
+          <div>
+            <div class="hub-amount-label">Contract</div>
+            <div class="hub-amount mono">$30,000</div>
+          </div>
+        </div>
+        <div class="hub-stats">
+          <div class="hub-stat"><span class="hub-stat-v mono">46</span><span class="hub-stat-l">Events · 2nd most</span></div>
+          <div class="hub-stat"><span class="hub-stat-v mono">$652</span><span class="hub-stat-l">Per event · lowest</span></div>
+          <div class="hub-stat"><span class="hub-stat-v mono">3</span><span class="hub-stat-l">Languages</span></div>
+        </div>
+        <div class="hub-body">
+          <div class="hub-highlights">
+            <div class="hub-highlight">Multi-country: Kenya, DRC, Cameroon, Liberia, South Sudan. <strong>8 sub-hubs</strong> established.</div>
+            <div class="hub-highlight">124 attendees at African DReps panel. English, French, Swahili content delivery.</div>
+            <div class="hub-highlight">Lowest cost-per-event of any hub in the program.</div>
+          </div>
+        </div>
+        <div class="hub-links">
+          <a class="hub-link" href="https://htmlpreview.github.io/?https://raw.githubusercontent.com/Awen-online/intersect_mcc/refs/heads/master/hub_report.html#wada-hub">Full section →</a>
+        </div>
+      </div>
+
+      <!-- Europe -->
+      <div class="hub-card">
+        <div class="hub-head">
+          <div>
+            <div class="hub-region">Europe · Shortest engagement</div>
+            <h3>Europe <span class="hub-op">· Clay Nation</span></h3>
+            <div class="hub-meta">Sep 2024 — Jun 2025 · 9 months · 3 milestones</div>
+          </div>
+          <div>
+            <div class="hub-amount-label">Contract</div>
+            <div class="hub-amount mono">75,758 ADA</div>
+          </div>
+        </div>
+        <div class="hub-stats">
+          <div class="hub-stat"><span class="hub-stat-v mono">9</span><span class="hub-stat-l">Events</span></div>
+          <div class="hub-stat"><span class="hub-stat-v mono">19</span><span class="hub-stat-l">Individual members</span></div>
+          <div class="hub-stat"><span class="hub-stat-v mono">200+</span><span class="hub-stat-l">Launch X Space</span></div>
+        </div>
+        <div class="hub-body">
+          <div class="hub-highlights">
+            <div class="hub-highlight">ADA-denominated contract. 29 attendees at Amsterdam event. 59 at Town Hall X Space.</div>
+            <div class="hub-highlight">Shortest engagement, narrower remit than the other hubs — lower milestone count reflects scope, not delivery failure.</div>
+            <div class="hub-highlight">Excluded from USD ROI calculations to avoid exchange-rate assumptions.</div>
+          </div>
+        </div>
+        <div class="hub-links">
+          <a class="hub-link" href="https://htmlpreview.github.io/?https://raw.githubusercontent.com/Awen-online/intersect_mcc/refs/heads/master/hub_report.html#europe-hub">Full section →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CAVEATS -->
+<section class="section section-alt" id="caveats">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-number">§ 05 · Caveats</div>
+      <div>
+        <h2>How to read these numbers.</h2>
+        <p>No single hub leads on every metric, and no hub should. Structural differences between regions produce different efficiency profiles — reading any cost figure in isolation is misleading without context.</p>
+      </div>
+    </div>
+
+    <div class="caveats">
+      <div class="caveat">
+        <div class="caveat-num serif">01</div>
+        <div>
+          <h4>Hub durations differ</h4>
+          <p>North America launched 17 September 2024 (~9.4 months active). Japan, LATAM, Sri Lanka, and WADA ran 12–14 months. Fixed contract amounts spread over fewer months produce higher per-month figures regardless of effort or output.</p>
+        </div>
+      </div>
+      <div class="caveat">
+        <div class="caveat-num serif">02</div>
+        <div>
+          <h4>Local cost structures differ</h4>
+          <p>$1 of contract value buys meaningfully more hub-manager time and venue capacity in Sri Lanka, Argentina, Ghana, or Kenya than in the US, EU, or Japan. Comparing per-event costs across regions without adjusting for purchasing power is misleading — and no meaningful adjustment exists in the dataset.</p>
+        </div>
+      </div>
+      <div class="caveat">
+        <div class="caveat-num serif">03</div>
+        <div>
+          <h4>Sub-hub structure differs</h4>
+          <p>LATAM runs 5 sub-hubs; WADA covers 3 sub-regions; Japan hosts weekly X Spaces across 6 cities; NA has one country, one manager, and ran fewer but larger flagship events (GM2025 DRep Debate, Consensus Toronto). Event counts are not unit-comparable across these shapes.</p>
+        </div>
+      </div>
+      <div class="caveat">
+        <div class="caveat-num serif">04</div>
+        <div>
+          <h4>Snapshot lag</h4>
+          <p>Per-hub event counts come from a 12 March 2025 presentation. NA's count here (18) is the hub's own end-of-program KPI; the snapshot showed 12. Other hubs likely have higher end-of-program counts than the snapshot captured — which would lower their per-event figures further.</p>
+        </div>
+      </div>
+      <div class="caveat">
+        <div class="caveat-num serif">05</div>
+        <div>
+          <h4>No single "winner"</h4>
+          <p>Japan leads on cost-per-member and cost-per-event. WADA leads on event volume and cost-per-event. North America leads on cost-per-milestone and is second on cost-per-member. LATAM funded the most expensive sub-hub launch programme from one contract. Sri Lanka led on educational throughput. Each hub produced a different shape of return — that is the design, not a bug.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ROLES -->
-<section class="section" id="roles">
+<!-- DELIVERABLES & BEYOND-SCOPE -->
+<section class="section" id="deliverables">
   <div class="container">
     <div class="section-head">
-      <div class="section-number">§ 06 · Participants</div>
+      <div class="section-number">§ 06 · Deliverables</div>
       <div>
-        <h2>Who does what.</h2>
-        <p>The MCC is one link in the Cardano governance chain. We don't act alone, and we don't make the final funding call — DReps do.</p>
+        <h2>Contract delivery &amp; outcomes beyond scope.</h2>
+        <p>Hub contracts required six specific monthly deliverables per the <em>Hub Shaper's Handbook</em>. Acceptance was verified via DocuSign-signed Milestone Acceptance Forms. Every row below is sourced from archived Intersect MCC contract records.</p>
       </div>
     </div>
 
-    <div class="roles-grid">
-      <div class="role">
-        <div class="role-label">The committee</div>
-        <h3>MCC</h3>
-        <p>Designs programs, issues contracts, tracks performance, publishes data. Reports into Intersect and coordinates with the Steering Committee.</p>
-        <ul class="role-list">
-          <li>Program design &amp; budget</li>
-          <li>Contracting &amp; MAFs</li>
-          <li>KPI reporting</li>
-        </ul>
+    <div class="section-subhead">Contract deliverables · all six, all hubs</div>
+
+    <div class="data-table">
+      <table>
+        <thead>
+          <tr>
+            <th>Contract requirement</th>
+            <th>Delivered</th>
+            <th class="right">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="row-head">Monthly Town Hall meeting</span></td>
+            <td>All 6 hubs · NA 6 Town Halls (avg 130, peak 326) · Japan bi-monthly · LATAM bilingual · Sri Lanka 6 Town Halls (69–102 attendees) · WADA monthly across 3 sub-regions · Europe 155 peak.</td>
+            <td class="right num ok">Delivered</td>
+          </tr>
+          <tr>
+            <td><span class="row-head">Social media activity</span></td>
+            <td>All 6 hubs · 185+ X posts documented · dedicated @Intersect[Region] accounts · content in 8 languages.</td>
+            <td class="right num ok">Delivered</td>
+          </tr>
+          <tr>
+            <td><span class="row-head">Attend / host events</span></td>
+            <td>173 events · Japan 61 · WADA 46 · Sri Lanka 21 · LATAM 18 · NA 18 · Europe 9.</td>
+            <td class="right num ok">Delivered</td>
+          </tr>
+          <tr>
+            <td><span class="row-head">Host at least one X Space / month</span></td>
+            <td>All 6 hubs · Japan weekly · NA monthly (DeFi, inter-regional) · WADA monthly (100 peak) · Sri Lanka multilingual.</td>
+            <td class="right num ok">Delivered</td>
+          </tr>
+          <tr>
+            <td><span class="row-head">Status Report (Hub Shaper's Handbook)</span></td>
+            <td>48 MAFs · DocuSign-verified · 35 original + 13 interim · approvers: Hannah Williams, Duncan Soutar, Abbie Yeates.</td>
+            <td class="right num ok">Delivered</td>
+          </tr>
+          <tr>
+            <td><span class="row-head">Events tracker (Hub Shaper's Handbook)</span></td>
+            <td>All 6 hubs · 30+ Luma event pages, 15+ video recordings catalogued with dates, attendee counts, linked evidence.</td>
+            <td class="right num ok">Delivered</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td>Milestone completion</td>
+            <td>49 of 49 accepted via DocuSign · zero failures across the entire program.</td>
+            <td class="right num ok">100%</td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+
+    <div class="section-subhead">Outcomes beyond contract scope · not required, delivered anyway</div>
+
+    <div class="deliverables-grid">
+      <div class="outcome ok">
+        <span class="outcome-label">Membership</span>
+        <h4>Membership growth</h4>
+        <p>No membership targets were set in contracts. Hubs collectively produced <strong>1,268 individual members, 1,111 associates, and 16 enterprise accounts</strong> — 70% of Intersect's total individual membership. Japan alone contributed 30% of all individual members.</p>
       </div>
-      <div class="role">
-        <div class="role-label">The regions</div>
-        <h3>Hub operators</h3>
-        <p>Deliver events, onboard members, localize content, run regional governance programming against agreed milestones and budgets.</p>
-        <ul class="role-list">
-          <li>Events &amp; localization</li>
-          <li>Milestone delivery</li>
-          <li>Itemized financial reporting</li>
-        </ul>
+      <div class="outcome info">
+        <span class="outcome-label">Geography</span>
+        <h4>Sub-hub expansion</h4>
+        <p>Geographic expansion was not a contract requirement. Hubs organically established <strong>8 sub-hubs</strong> — WADA across Kenya, DRC, Cameroon, Liberia, South Sudan; LATAM across Uruguay and Mexico; NA across regional community nodes.</p>
       </div>
-      <div class="role">
-        <div class="role-label">The members</div>
-        <h3>Community</h3>
-        <p>Attend, contribute, translate, host sub-hub events, and vote inside Intersect governance. The program exists to serve them.</p>
-        <ul class="role-list">
-          <li>Participation &amp; feedback</li>
-          <li>Sub-hub expansion</li>
-          <li>Working-group contribution</li>
-        </ul>
+      <div class="outcome info">
+        <span class="outcome-label">Education</span>
+        <h4>University programmes</h4>
+        <p>Not a contract deliverable. Sri Lanka built university partnerships producing <strong>700+ students trained</strong>, including UniHack 2025 (225 students, 61 teams, 18 universities) and Uni Kelaniya (108 certified). This created a Cardano developer pipeline from nothing.</p>
       </div>
-      <div class="role">
-        <div class="role-label">The sovereign</div>
-        <h3>DReps</h3>
-        <p>Vote on the 2026 Cardano budget. MCC funding only flows after DRep approval and the resulting on-chain treasury-withdrawal action.</p>
-        <ul class="role-list">
-          <li>Budget approval</li>
-          <li>On-chain voting</li>
-          <li>Accountability check</li>
-        </ul>
+      <div class="outcome info">
+        <span class="outcome-label">Governance</span>
+        <h4>Governance participation</h4>
+        <p>Contracts required event hosting but not governance-specific outcomes. Hubs delivered budget workshops, DRep debates, constitutional translations, GovTool engagement (12+ proposals reviewed by NA alone), and CC election support — enabling on-chain participation across regions.</p>
+      </div>
+      <div class="outcome info">
+        <span class="outcome-label">Localization</span>
+        <h4>Translation &amp; localization</h4>
+        <p>Content delivered in <strong>8 languages</strong> — English, Japanese, Spanish, Portuguese, Sinhala, Tamil, French, Swahili. Japan translated the full Constitution, governance materials, and Intersect videos. Sri Lanka produced trilingual content. WADA ran across three working languages.</p>
+      </div>
+      <div class="outcome warn">
+        <span class="outcome-label">Voluntary</span>
+        <h4>Financial transparency (Japan)</h4>
+        <p>Not required by any contract. Japan voluntarily published a full itemized cost breakdown ($19,049 actual spend) and <strong>returned 15,436 ADA in unused funds</strong> to the treasury. This level of disclosure is now the baseline standard proposed for the 2026 framework.</p>
       </div>
     </div>
   </div>
@@ -1638,8 +1986,8 @@
     <div class="section-head">
       <div class="section-number">§ 07 · FAQ</div>
       <div>
-        <h2>Answering the community — directly.</h2>
-        <p>The 2026 framework is designed as a direct response to legitimate community questions about 2025. These are honest, specific answers — not PR.</p>
+        <h2>Community concerns — answered with receipts.</h2>
+        <p>These are the questions people actually raised during and after the 2025 cycle. Honest, specific answers — not PR. Every figure cited is sourced from the full post-mortem.</p>
       </div>
     </div>
 
@@ -1655,9 +2003,9 @@
         <div class="faq-a">
           <p>The hub program had two funding phases and both are now publicly documented.</p>
           <ul>
-            <li><strong>Phase 1 (~6 months):</strong> Funded by CDH and Intersect operational budgets. Contract amounts are disclosed via Intersect's archived contract records — $25K to $42K per hub, totalling $161,000 USD.</li>
+            <li><strong>Phase 1 (~6 months):</strong> Funded by CDH and Intersect operational budgets. Contract amounts — $25K to $42K per hub, $161,000 USD total — are now disclosed via archived contract records.</li>
             <li><strong>Phase 2 (Apr–Jun 2025 bridge):</strong> Funded through public treasury withdrawal. Every payment is on-chain public record.</li>
-            <li><strong>AMM event contracts:</strong> Separate contracts issued for Annual Members Meeting delivery per region, also published.</li>
+            <li><strong>AMM event contracts:</strong> Issued separately per region for the Annual Members Meeting, also published.</li>
             <li><strong>Milestone-gated:</strong> 48 Milestone Acceptance Forms, DocuSign-verified, required before any payment was released — in both phases.</li>
           </ul>
           <p>What remains outstanding from most hubs is <em>itemized spend breakdowns</em>. That was a contract design gap, not wrongdoing. The 2026 framework requires itemized reporting from every hub, by default, from day one.</p>
@@ -1670,7 +2018,7 @@
           <span class="faq-toggle">+</span>
         </summary>
         <div class="faq-a">
-          <p>Phase 1 contract totals are now publicly disclosed for every hub. What Japan provided that others did not was an itemized spend breakdown — events 55%, staff 26%, management 18%, tools 1%. That level of granularity was not a contract requirement for any hub in 2025.</p>
+          <p>Phase 1 contract totals are now publicly disclosed for every hub (see <a href="#funding">§ 02 — Funding</a>). What Japan provided that others did not was an itemized spend breakdown: events 54.9%, staff 25.7%, hub manager 18.3%, tools 1.1%. That level of granularity was not a contract requirement for any hub in 2025.</p>
           <p>Japan's standard is the new floor. The 2026 framework makes itemized financial reporting mandatory across every hub, written into the contract from the start.</p>
         </div>
       </details>
@@ -1681,8 +2029,8 @@
           <span class="faq-toggle">+</span>
         </summary>
         <div class="faq-a">
-          <p>Phase 1 contract totals: LATAM $42,000 USD, Sri Lanka $36,000 USD. Phase 2 bridge payments (LATAM 23,438 ADA, Sri Lanka 18,182 ADA) are on-chain public record. What remains unavailable is internal itemized breakdowns — not because they were hidden, but because the original contracts did not require them.</p>
-          <p>Japan's cost benchmark remains the most useful public reference for hub operations: ~$19,000 USD across events (55%), staff (26%), management (18%), and tools (1%). 2026 contracts require this level of reporting from every hub.</p>
+          <p>Phase 1 contract totals are public: LATAM $42,000 USD, Sri Lanka $36,000 USD. Phase 2 bridge payments (LATAM 23,438 ADA, Sri Lanka 18,182 ADA) are on-chain public record. What remains unavailable is internal itemized breakdowns — not because they were hidden, but because the original contracts did not require them.</p>
+          <p>Japan's actual-spend benchmark — $19,049 across events, staff, management, and tools — remains the most useful public reference for what hub operations cost. 2026 contracts require this level of reporting from every hub.</p>
         </div>
       </details>
 
@@ -1694,21 +2042,56 @@
           <span class="faq-toggle">+</span>
         </summary>
         <div class="faq-a">
-          <p>We now have both the funding data and the outcomes data. Headline numbers:</p>
+          <p>We now have both funding and outcomes. Headline numbers:</p>
           <ul>
-            <li>$161,000 USD Phase 1 contracts produced 1,249 individual members across five USD-contracted hubs — $128.90 per member.</li>
-            <li>164 events delivered at an average cost of $982 per event.</li>
-            <li>Japan: 533 members from 61 events at $19,049 actual spend — $35.74 per member, with 15,436 ADA returned to treasury.</li>
-            <li>North America: 239 individual + 6 enterprise members from $25,000 in 9 months — $104.60 per member.</li>
-            <li>70% of Intersect's individual members are in hub regions. These are active, committed members, not passive attendees.</li>
+            <li>$161,000 USD Phase 1 contracts produced 1,249 individual members across five USD-contracted hubs — <strong>$128.90 per member</strong>.</li>
+            <li>164 events delivered at an average cost of <strong>$982 per event</strong>.</li>
+            <li>Japan: 533 members from 61 events at $19,049 actual spend — <strong>$35.74 per member</strong>, with 15,436 ADA returned to treasury.</li>
+            <li>North America: 239 individual + 6 enterprise members from $25K in 9 months — <strong>$104.60 per member</strong>.</li>
+            <li><strong>70% of Intersect's individual members are in hub regions.</strong> These are active, committed members, not passive attendees.</li>
           </ul>
-          <p>Average monthly cost per hub was ~$2,640 — less than a single part-time contractor in most markets.</p>
+          <p>Average monthly cost per hub was ~$2,640 — less than a single part-time contractor in most markets. These are community volunteer operations with modest budgets, not enterprise-scale programmes.</p>
         </div>
       </details>
 
       <details class="faq-item">
         <summary class="faq-q">
-          <span>"Why should we trust that 2026 will be any different from 2025?"</span>
+          <span>"Why did LATAM get $42K and North America only $25K? Who decided the amounts?"</span>
+          <span class="faq-toggle">+</span>
+        </summary>
+        <div class="faq-a">
+          <p>Phase 1 contracts were negotiated individually based on region size, launch date, scope, and existing local capacity. LATAM and Japan launched as founding hubs in May 2024 under the CDH structure with broader scope — including sub-hub launches across five countries for LATAM. North America launched in September 2024 with a narrower initial remit and delivered at a lower cost per member as a result.</p>
+          <p>In the 2026 proposal, the $75K regional hub pool is allocated against published KPIs and milestones rather than per-region flat contracts — matching allocation to demonstrated performance and regional scope.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-q">
+          <span>"Europe's numbers look weak. Was it a failure?"</span>
+          <span class="faq-toggle">+</span>
+        </summary>
+        <div class="faq-a">
+          <p>Europe (Clay Nation) delivered 3 milestones against a different contract structure (ADA-denominated, 75,758 ADA) and a later launch date (September 2024). The lower milestone count reflects scope, not delivery failure — it was a smaller, shorter engagement by design. A like-for-like comparison with the six-hub average isn't meaningful.</p>
+          <p>Europe is excluded from USD ROI calculations specifically because its contract was ADA-denominated; including it would force exchange-rate assumptions into the dataset.</p>
+        </div>
+      </details>
+
+      <div class="faq-group-label">Governance &amp; process</div>
+
+      <details class="faq-item">
+        <summary class="faq-q">
+          <span>"The hub managers wrote their own post-mortem. Of course it looks good."</span>
+          <span class="faq-toggle">+</span>
+        </summary>
+        <div class="faq-a">
+          <p>The report is sourced from Milestone Acceptance Forms (DocuSign-verified), Intersect Development Updates #13–#70, 185+ public X posts, 30+ Luma event pages, 15+ video recordings, and archived Intersect contract pages — not self-report. Every funding figure has an on-chain or published-contract source. Every KPI claim links to a public artefact.</p>
+          <p>Cross-check any claim by following the citations in the full document.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-q">
+          <span>"Why should we trust that 2026 will be different?"</span>
           <span class="faq-toggle">+</span>
         </summary>
         <div class="faq-a">
@@ -1718,50 +2101,6 @@
             <li><strong>Every funding request must state which KPI it supports, which milestone it contributes toward, and the expected measurable outcome</strong> — no open-ended allocations.</li>
             <li><strong>All funding flows through the Cardano treasury via the 2026 budget process</strong>, voted by DReps on-chain. That is independent, publicly verifiable oversight — not committee self-assessment.</li>
           </ul>
-        </div>
-      </details>
-
-      <details class="faq-item">
-        <summary class="faq-q">
-          <span>"Why did LATAM get $42K and North America only $25K? Who decided?"</span>
-          <span class="faq-toggle">+</span>
-        </summary>
-        <div class="faq-a">
-          <p>Phase 1 contracts were negotiated individually based on region size, launch date, scope, and existing local capacity. LATAM and Japan launched as founding hubs in May 2024 under the CDH structure with broader scope. North America launched in September 2024 with a narrower initial remit and delivered at a lower cost per member as a result.</p>
-          <p>For 2026, the $75K hub pool (WP 04) is allocated against published KPIs and milestones rather than per-region flat contracts — matching allocation to demonstrated performance and regional scope.</p>
-        </div>
-      </details>
-
-      <div class="faq-group-label">Governance &amp; process</div>
-
-      <details class="faq-item">
-        <summary class="faq-q">
-          <span>"Europe's numbers look weak compared to the other hubs. Was it a failure?"</span>
-          <span class="faq-toggle">+</span>
-        </summary>
-        <div class="faq-a">
-          <p>Europe (Clay Nation) delivered 3 milestones against a different contract structure (ADA-denominated, 75,758 ADA) and a later launch date (September 2024). The lower milestone count reflects scope, not delivery failure — it was a smaller, shorter engagement. A like-for-like comparison with the six-hub average isn't meaningful.</p>
-        </div>
-      </details>
-
-      <details class="faq-item">
-        <summary class="faq-q">
-          <span>"Why should the same people run the program again?"</span>
-          <span class="faq-toggle">+</span>
-        </summary>
-        <div class="faq-a">
-          <p>Hub operators are selected per region based on demonstrated local capacity and delivery history, not legacy. Every 2026 contract is new, milestone-gated, and conditional on KPI performance. A hub that underdelivers in 2026 does not automatically renew — and the $75K WP 04 pool is explicitly distributed against measured performance, not seniority.</p>
-        </div>
-      </details>
-
-      <details class="faq-item">
-        <summary class="faq-q">
-          <span>"The hub managers wrote their own post-mortem. Of course it looks good."</span>
-          <span class="faq-toggle">+</span>
-        </summary>
-        <div class="faq-a">
-          <p>The post-mortem is sourced from Milestone Acceptance Forms (DocuSign-verified), Intersect Development Updates #13–#70, public X/Luma/YouTube records, and archived Intersect contract pages — not committee self-report. Every funding figure has an on-chain or published-contract source. You can cross-check every claim by following the citations in the full document.</p>
-          <p>That's also why we're publishing this hub page — so the data is one click away, not buried behind five separate document systems.</p>
         </div>
       </details>
 
@@ -1775,71 +2114,71 @@
     <div class="section-head">
       <div class="section-number">§ 08 · Resources</div>
       <div>
-        <h2>Everything, in one index.</h2>
-        <p>All the authoritative MCC documents, working drafts, and upstream Intersect pages. This hub is the entry point — these links remain the source of truth.</p>
+        <h2>Sources, records, and references.</h2>
+        <p>Every figure in this summary is sourced. These are the canonical documents, contract archives, and working records used to build the post-mortem.</p>
       </div>
     </div>
 
     <div class="resources-grid">
-      <a class="resource" href="https://htmlpreview.github.io/?https://raw.githubusercontent.com/Awen-online/intersect_mcc/refs/heads/master/mcc_budget_2026.html">
-        <span class="resource-label">Primary · 2026</span>
-        <h4>2026 MCC Budget Proposal</h4>
-        <span class="resource-url">mcc_budget_2026.html</span>
-      </a>
       <a class="resource" href="https://htmlpreview.github.io/?https://raw.githubusercontent.com/Awen-online/intersect_mcc/refs/heads/master/hub_report.html">
-        <span class="resource-label">Primary · 2025</span>
-        <h4>2025 Community Hubs Post-Mortem</h4>
-        <span class="resource-url">hub_report.html</span>
+        <span class="resource-label">Primary</span>
+        <h4>Full 2025 Community Hubs Post-Mortem</h4>
+        <span class="resource-url">hub_report.html · v1.6</span>
+      </a>
+      <a class="resource" href="https://github.com/Awen-online/intersect_mcc">
+        <span class="resource-label">Repository</span>
+        <h4>Source repository (Awen-online/intersect_mcc)</h4>
+        <span class="resource-url">github.com/Awen-online/intersect_mcc</span>
+      </a>
+      <a class="resource" href="https://docs.intersectmbo.org/intersect-knowledge-base/archive/cardano-budget-archive/intersect-operational-services/2024-intersect-cdh-and-grant-contracts/2024-cdh-contracts">
+        <span class="resource-label">Archive · Phase 1</span>
+        <h4>2024 CDH Contracts</h4>
+        <span class="resource-url">docs.intersectmbo.org/.../2024-cdh-contracts</span>
+      </a>
+      <a class="resource" href="https://docs.intersectmbo.org/intersect-knowledge-base/archive/cardano-budget-archive/intersect-operational-services/2024-intersect-cdh-and-grant-contracts/2024-intersect-contracts">
+        <span class="resource-label">Archive · Phase 1</span>
+        <h4>2024 Intersect Contracts</h4>
+        <span class="resource-url">docs.intersectmbo.org/.../2024-intersect-contracts</span>
+      </a>
+      <a class="resource" href="https://docs.intersectmbo.org/intersect-knowledge-base/archive/cardano-budget-archive/intersect-operational-services/2025-delivery-assurance-contract-updates/membership-and-community-committee-contracts">
+        <span class="resource-label">Archive · Phase 2</span>
+        <h4>2025 MCC Bridge Contracts</h4>
+        <span class="resource-url">docs.intersectmbo.org/.../mcc-contracts</span>
+      </a>
+      <a class="resource" href="https://docs.intersectmbo.org/intersect-overview/intersect-committees/membership-and-community-committee-mcc/community-hubs">
+        <span class="resource-label">Committee</span>
+        <h4>Community Hubs on the Intersect KB</h4>
+        <span class="resource-url">docs.intersectmbo.org/.../community-hubs</span>
+      </a>
+      <a class="resource" href="https://committees.docs.intersectmbo.org/groups-overview/working-groups/mcc-community-hubs-working-group">
+        <span class="resource-label">Working group</span>
+        <h4>MCC Community Hubs Working Group &amp; KPIs</h4>
+        <span class="resource-url">committees.docs.intersectmbo.org/.../mcc-community-hubs-working-group</span>
+      </a>
+      <a class="resource" href="https://docs.google.com/spreadsheets/d/1muVvwKtyk6WZHOKFpXRorlfGUdqiXAl70P88ttcK_ns/edit">
+        <span class="resource-label">Benchmark</span>
+        <h4>Japan Hub expenditure spreadsheet</h4>
+        <span class="resource-url">docs.google.com/.../japan-expenditure</span>
+      </a>
+      <a class="resource" href="https://cardanoscan.io/address/0111e909a2fb7ed1b970f7e4ca388350b07ec1151a2a01234f622c584edb506c52dad37a14f71a1d7309f2e9e24f594eb880ec13a9f670fa11">
+        <span class="resource-label">On-chain</span>
+        <h4>Japan returned funds (15,436 ADA)</h4>
+        <span class="resource-url">cardanoscan.io/address/...</span>
+      </a>
+      <a class="resource" href="https://docs.google.com/presentation/d/1LckpJMmmd4ctA9NUfA-yYwlVFI7HWiuihy1d94C9n5s/edit">
+        <span class="resource-label">Snapshot</span>
+        <h4>Community Hubs Stats · March 2025</h4>
+        <span class="resource-url">docs.google.com/.../hubs-stats-march-2025</span>
+      </a>
+      <a class="resource" href="https://www.intersectmbo.org/news">
+        <span class="resource-label">Context</span>
+        <h4>Intersect Development Updates (#13 — #70)</h4>
+        <span class="resource-url">intersectmbo.org/news</span>
       </a>
       <a class="resource" href="https://docs.intersectmbo.org/intersect-overview/intersect-committees/membership-and-community-committee-mcc">
         <span class="resource-label">Committee</span>
         <h4>MCC on the Intersect Knowledge Base</h4>
         <span class="resource-url">docs.intersectmbo.org/.../mcc</span>
-      </a>
-      <a class="resource" href="https://docs.intersectmbo.org/intersect-overview/intersect-committees/membership-and-community-committee-mcc/community-hubs">
-        <span class="resource-label">Committee</span>
-        <h4>Community Hubs documentation</h4>
-        <span class="resource-url">docs.intersectmbo.org/.../community-hubs</span>
-      </a>
-      <a class="resource" href="https://committees.docs.intersectmbo.org/groups-overview/working-groups/mcc-community-hubs-working-group">
-        <span class="resource-label">Working group</span>
-        <h4>Community Hubs Working Group &amp; KPIs</h4>
-        <span class="resource-url">committees.docs.intersectmbo.org/.../mcc-community-hubs-working-group</span>
-      </a>
-      <a class="resource" href="https://docs.intersectmbo.org/intersect-knowledge-base/archive/cardano-budget-archive/intersect-operational-services/2025-delivery-assurance-contract-updates/membership-and-community-committee-contracts">
-        <span class="resource-label">Archive</span>
-        <h4>MCC Contracts &amp; Delivery Assurance</h4>
-        <span class="resource-url">docs.intersectmbo.org/.../mcc-contracts</span>
-      </a>
-      <a class="resource" href="https://docs.google.com/document/d/1h0w3swMntVyn6TL46vB2Arj5Irkmn_7b2w6bIsQzJeU/edit">
-        <span class="resource-label">Draft</span>
-        <h4>MCC Budget Document (Google Doc)</h4>
-        <span class="resource-url">docs.google.com/.../mcc-budget</span>
-      </a>
-      <a class="resource" href="https://docs.google.com/document/d/1l9gSmiIbdVVZeF7eBJRw_jFpC3oNHgNsL8enywRJXxA/edit">
-        <span class="resource-label">Draft</span>
-        <h4>MCC Remit (Draft)</h4>
-        <span class="resource-url">docs.google.com/.../mcc-remit</span>
-      </a>
-      <a class="resource" href="https://miro.com/app/board/uXjVKc5x4ak=/">
-        <span class="resource-label">Working space</span>
-        <h4>Intersect Committee Miro Boards</h4>
-        <span class="resource-url">miro.com/.../committee-boards</span>
-      </a>
-      <a class="resource" href="https://docs.intersectmbo.org/intersect-knowledge-base/archive/cardano-budget-archive/intersect-operational-services/2024-intersect-cdh-and-grant-contracts/2024-cdh-contracts">
-        <span class="resource-label">Archive</span>
-        <h4>2024 CDH Contracts</h4>
-        <span class="resource-url">docs.intersectmbo.org/.../2024-cdh-contracts</span>
-      </a>
-      <a class="resource" href="https://docs.intersectmbo.org/intersect-knowledge-base/archive/cardano-budget-archive/intersect-operational-services/2024-intersect-cdh-and-grant-contracts/2024-intersect-contracts">
-        <span class="resource-label">Archive</span>
-        <h4>2024 Intersect Contracts</h4>
-        <span class="resource-url">docs.intersectmbo.org/.../2024-intersect-contracts</span>
-      </a>
-      <a class="resource" href="https://members.intersectmbo.org/registration">
-        <span class="resource-label">Join</span>
-        <h4>Become an Intersect member</h4>
-        <span class="resource-url">members.intersectmbo.org/registration</span>
       </a>
     </div>
   </div>
@@ -1853,39 +2192,41 @@
         <a class="logo" href="https://www.intersectmbo.org/">
           <span class="logo-mark"></span>
           Intersect
-          <span class="logo-suffix">MCC</span>
+          <span class="logo-suffix">Hubs · Post-Mortem</span>
         </a>
-        <p>The Membership &amp; Community Committee of Intersect. Building the pathways between members and the Cardano ecosystem — regionally, transparently, and with accountability built in.</p>
+        <p>2025 Community Hubs post-mortem — six regional hubs, full funding disclosure, ROI analysis, per-hub results. Every figure sourced from public records, archived contracts, and DocuSign-verified milestone acceptance forms.</p>
       </div>
       <div class="footer-col">
-        <h5>Committee</h5>
+        <h5>Report</h5>
         <ul>
-          <li><a href="#about">About the MCC</a></li>
-          <li><a href="#budget">2026 budget</a></li>
-          <li><a href="#hubs">Community hubs</a></li>
+          <li><a href="#overview">Overview</a></li>
+          <li><a href="#funding">Funding</a></li>
+          <li><a href="#roi">ROI</a></li>
+          <li><a href="#hubs">The six hubs</a></li>
+          <li><a href="#deliverables">Deliverables</a></li>
           <li><a href="#faq">FAQ</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h5>Reports</h5>
+        <h5>Full document</h5>
         <ul>
-          <li><a href="https://htmlpreview.github.io/?https://raw.githubusercontent.com/Awen-online/intersect_mcc/refs/heads/master/mcc_budget_2026.html">2026 budget proposal</a></li>
-          <li><a href="https://htmlpreview.github.io/?https://raw.githubusercontent.com/Awen-online/intersect_mcc/refs/heads/master/hub_report.html">2025 post-mortem</a></li>
-          <li><a href="#resources">All resources</a></li>
+          <li><a href="https://htmlpreview.github.io/?https://raw.githubusercontent.com/Awen-online/intersect_mcc/refs/heads/master/hub_report.html">hub_report.html</a></li>
+          <li><a href="https://github.com/Awen-online/intersect_mcc">Source repo</a></li>
+          <li><a href="#resources">All references</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h5>Intersect</h5>
         <ul>
           <li><a href="https://www.intersectmbo.org/about-intersect">About Intersect</a></li>
-          <li><a href="https://www.intersectmbo.org/membership">Membership</a></li>
+          <li><a href="https://docs.intersectmbo.org/intersect-overview/intersect-committees/membership-and-community-committee-mcc">MCC on the KB</a></li>
           <li><a href="https://docs.intersectmbo.org">Knowledge base</a></li>
           <li><a href="https://www.intersectmbo.org/news">News</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <div>MCC hub · v1.0 · Draft · Community-maintained</div>
+      <div>Hubs post-mortem · v1.6 · Community-maintained summary</div>
       <div class="footer-social">
         <a href="https://x.com/IntersectMBO">X</a>
         <a href="https://github.com/Awen-online/intersect_mcc">GitHub</a>
